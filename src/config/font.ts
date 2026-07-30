@@ -4,5 +4,6 @@ export const fontFamilies = {
   InterTight: {
     semiBold: isIOS() ? 'InterTight-SemiBold' : 'InterTightSemiBold',
     regular: isIOS() ? 'InterTight-Regular' : 'InterTightRegular',
+    medium: isIOS() ? 'InterTight-Medium' : 'InterTightMedium',
   },
 };

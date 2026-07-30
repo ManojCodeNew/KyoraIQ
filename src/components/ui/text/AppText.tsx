@@ -1,11 +1,17 @@
-import { StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextProps,
+  TextStyle,
+} from 'react-native';
 import { fontPixel } from '../../../config/responsive';
 import { COLORS } from '../../../config/colors';
 import { fontFamilies } from '../../../config/font';
 
-type AppTextVariantType = 'title' | 'subtitle' | 'body' | 'caption';
+type AppTextVariantType = 'title' | 'subtitle' | 'body' | 'caption' | 'btnText';
 
-interface AppTextPropsType {
+interface AppTextPropsType extends TextProps {
   variant?: AppTextVariantType;
   textStyle?: StyleProp<TextStyle>;
   textContent: string;
@@ -50,5 +56,11 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: COLORS.app_8C8694,
     fontFamily: fontFamilies.InterTight.regular,
+  },
+  btnText: {
+    fontSize: fontPixel(16),
+    fontWeight: '500',
+    color: COLORS.app_8C8694,
+    fontFamily: fontFamilies.InterTight.medium,
   },
 });

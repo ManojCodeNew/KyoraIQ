@@ -1,9 +1,16 @@
-import { Pressable, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import {
+  Pressable,
+  PressableProps,
+  StyleProp,
+  StyleSheet,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
+import { heightPixel, widthPixel } from '../../../config/responsive';
 
 type AppButtonVariantType = 'primary' | 'secondary';
 
-interface AppButtonPropsType {
+interface AppButtonPropsType extends PressableProps {
   variant?: AppButtonVariantType;
   buttonStyle?: StyleProp<ViewStyle>;
   onClick: () => void;
@@ -31,6 +38,15 @@ const AppButton = ({
 export default AppButton;
 
 const styles = StyleSheet.create({
-  primary: {},
-  secondary: {},
+  primary: {
+    paddingVertical: heightPixel(14),
+    paddingHorizontal: heightPixel(60),
+    backgroundColor: '#ccc',
+    borderRadius: widthPixel(12),
+  },
+  secondary: {
+    paddingVertical: heightPixel(20),
+    paddingHorizontal: heightPixel(20),
+    backgroundColor: '#d78c8c',
+  },
 });

@@ -1,15 +1,17 @@
 import {
   Image,
+  ImageProps,
   ImageSourcePropType,
   ImageStyle,
   StyleProp,
   StyleSheet,
 } from 'react-native';
 import React from 'react';
+import { widthPixel } from '../../../config/responsive';
 
 type AppImageVariantType = 'default' | 'rounded' | 'thumbnail';
 
-interface AppImagePropsType {
+interface AppImagePropsType extends ImageProps {
   variant?: AppImageVariantType;
   imageStyle?: StyleProp<ImageStyle>;
   imagePath: ImageSourcePropType;
@@ -38,5 +40,7 @@ export default AppImage;
 const styles = StyleSheet.create({
   default: {},
   rounded: {},
-  thumbnail: {},
+  thumbnail: {
+    width: widthPixel(375),
+  },
 });
