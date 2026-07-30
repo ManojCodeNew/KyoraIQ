@@ -1,4 +1,7 @@
 import { StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
+import { fontPixel } from '../../../config/responsive';
+import { COLORS } from '../../../config/colors';
+import { fontFamilies } from '../../../config/font';
 
 type AppTextVariantType = 'title' | 'subtitle' | 'body' | 'caption';
 
@@ -24,8 +27,28 @@ const AppText = ({
 export default AppText;
 
 const styles = StyleSheet.create({
-  body: {},
-  title: {},
-  subtitle: {},
-  caption: {},
+  body: {
+    fontSize: fontPixel(14),
+    fontWeight: '400',
+    color: COLORS.app_8C8694,
+    fontFamily: fontFamilies.InterTight.regular,
+  },
+  title: {
+    fontSize: fontPixel(24),
+    fontWeight: '600',
+    color: COLORS.app_212121,
+    fontFamily: fontFamilies.InterTight.semiBold,
+  },
+  subtitle: {
+    fontSize: fontPixel(16),
+    fontWeight: '400',
+    color: COLORS.app_212121,
+    fontFamily: fontFamilies.InterTight.regular,
+  },
+  caption: {
+    fontSize: fontPixel(12),
+    fontWeight: '400',
+    color: COLORS.app_8C8694,
+    fontFamily: fontFamilies.InterTight.regular,
+  },
 });
