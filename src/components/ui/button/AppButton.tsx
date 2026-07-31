@@ -7,8 +7,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
+import { COLORS } from '../../../config/colors';
 
-type AppButtonVariantType = 'primary' | 'secondary';
+type AppButtonVariantType = 'primary' | 'secondary' | 'small';
 
 interface AppButtonPropsType extends PressableProps {
   variant?: AppButtonVariantType;
@@ -41,12 +42,18 @@ const styles = StyleSheet.create({
   primary: {
     paddingVertical: heightPixel(14),
     paddingHorizontal: heightPixel(60),
-    backgroundColor: '#ccc',
+    backgroundColor: COLORS.app_CCCCCC,
     borderRadius: widthPixel(12),
   },
   secondary: {
     paddingVertical: heightPixel(20),
     paddingHorizontal: heightPixel(20),
-    backgroundColor: '#d78c8c',
+    backgroundColor: COLORS.app_CCCCCC,
+  },
+  small: {
+    paddingVertical: heightPixel(10),
+    paddingHorizontal: heightPixel(12),
+    backgroundColor: COLORS.app_CCCCCC,
+    borderRadius: widthPixel(12),
   },
 });

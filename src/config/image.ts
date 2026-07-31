@@ -2,6 +2,7 @@ import INTRO1 from '../assets/images/firstScreen.png';
 import INTRO2 from '../assets/images/secondScreen.png';
 import INTRO3 from '../assets/images/thirdScreen.png';
 import INTRO4 from '../assets/images/fourthScreen.png';
+import APP_LOGO from '../assets/images/kyoralogo.png';
 
 export const IMAGES = {
   img_intro1: {
@@ -19,5 +20,9 @@ export const IMAGES = {
   img_intro4: {
     img: INTRO4,
     alt: 'Intro screen 4',
+  },
+  img_logo: {
+    img: APP_LOGO,
+    alt: 'App Logo',
   },
 };
