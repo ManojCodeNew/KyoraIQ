@@ -3,4 +3,6 @@ export type RootNativeStackParamList = {
   Intro: undefined;
   Login: undefined;
   Register: undefined;
+  RoleSetup: undefined;
+  ProfileDetails: undefined;
 };

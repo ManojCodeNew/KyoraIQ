@@ -15,8 +15,7 @@ const Register = ({
   };
 
   const handleSignup = () => {
-    // navigation.replace('Login');
-    console.log('Going to Profile Setup');
+    navigation.navigate('RoleSetup');
   };
 
   const navigateToLogin = () => {

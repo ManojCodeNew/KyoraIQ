@@ -15,7 +15,7 @@ const Login = ({
   };
 
   const handleLogin = () => {
-    console.log('Going to Profile Setup');
+    navigation.navigate('RoleSetup');
   };
 
   const navigateToSignup = () => {

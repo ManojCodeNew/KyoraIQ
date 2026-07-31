@@ -9,7 +9,12 @@ import {
 import React from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 
-type AppImageVariantType = 'default' | 'rounded' | 'thumbnail' | 'headerLogo';
+type AppImageVariantType =
+  | 'default'
+  | 'rounded'
+  | 'thumbnail'
+  | 'headerLogo'
+  | 'arrow';
 
 interface AppImagePropsType extends ImageProps {
   variant?: AppImageVariantType;
@@ -50,5 +55,9 @@ const styles = StyleSheet.create({
   headerLogo: {
     width: widthPixel(64),
     height: heightPixel(100),
+  },
+  arrow: {
+    width: widthPixel(32),
+    height: heightPixel(32),
   },
 });
