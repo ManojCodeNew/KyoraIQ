@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: '100%',
     alignItems: 'center',
-    // paddingVertical: heightPixel(12),
   },
 
   textContainer: {

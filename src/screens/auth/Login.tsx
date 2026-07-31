@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React from 'react';
+import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
+import AppText from '../../components/ui/text/AppText';
 
 const Login = () => {
   return (
-    <View>
-      <Text>Login</Text>
-    </View>
+    <SafeScreen>
+      <AppText textContent="Login" variant="title" />
+    </SafeScreen>
   );
 };
 

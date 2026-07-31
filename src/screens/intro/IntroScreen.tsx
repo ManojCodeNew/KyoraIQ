@@ -1,6 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { heightPixel, widthPixel } from '../../config/responsive';
+import { widthPixel } from '../../config/responsive';
 import IntroSlide from '../../components/introScreen/IntroSlide';
 import { useState } from 'react';
 import PaginationDivider from '../../components/introScreen/PaginationDivider';
@@ -8,7 +7,7 @@ import IntroActions from '../../components/introScreen/IntroActions';
 import { INTRO_DATA } from '../../config/data';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootNativeStackParamList } from '../../types/navigator.types';
-import SafeScreen from '../../components/safeScreen/SafeScreen';
+import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 
 const IntroScreen = ({
   navigation,
@@ -34,7 +33,7 @@ const IntroScreen = ({
   };
 
   return (
-    <SafeScreen>
+    <SafeScreen edges={['top', 'bottom']}>
       <View style={styles.contentContainer}>
         <IntroSlide item={INTRO_DATA[currentSlideIndex]} />
 

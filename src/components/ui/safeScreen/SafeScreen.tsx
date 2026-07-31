@@ -1,11 +1,17 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { heightPixel, widthPixel } from '../../config/responsive';
+import { Edges, SafeAreaView } from 'react-native-safe-area-context';
+import { heightPixel, widthPixel } from '../../../config/responsive';
 
-const SafeScreen = ({ children }: { children: React.ReactNode }) => {
+const SafeScreen = ({
+  children,
+  edges = ['top'],
+}: {
+  children: React.ReactNode;
+  edges?: Edges;
+}) => {
   return (
-    <SafeAreaView edges={['top', 'bottom']} style={styles.safeArea}>
+    <SafeAreaView edges={edges} style={styles.safeArea}>
       <View style={styles.container}>{children}</View>
     </SafeAreaView>
   );
