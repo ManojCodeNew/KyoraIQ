@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import React from 'react';
-import { widthPixel } from '../../../config/responsive';
+import { heightPixel, widthPixel } from '../../../config/responsive';
 
 type AppImageVariantType = 'default' | 'rounded' | 'thumbnail';
 
@@ -42,5 +42,6 @@ const styles = StyleSheet.create({
   rounded: {},
   thumbnail: {
     width: widthPixel(375),
+    height: heightPixel(505),
   },
 });

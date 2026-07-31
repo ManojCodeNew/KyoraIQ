@@ -1,4 +1,5 @@
 export type RootNativeStackParamList = {
   Initializer: undefined;
-  Home: undefined;
+  Intro: undefined;
+  Login: undefined;
 };

@@ -13,7 +13,7 @@ const AppInitializer = ({
       try {
         const initializerResult = await initializeApp();
         if (initializerResult.isAuthenticated) {
-          navigation.replace('Home');
+          navigation.replace('Intro');
         } else {
           console.log('Not Authenticated');
         }
