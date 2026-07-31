@@ -2,36 +2,41 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import Header from '../../components/auth/login/Header';
-import LoginPage from '../../components/auth/login/LoginPage';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootNativeStackParamList } from '../../types/navigator.types';
 import { widthPixel } from '../../config/responsive';
+import RegisterPage from '../../components/auth/register/RegisterPage';
 
-const Login = ({
+const Register = ({
   navigation,
 }: NativeStackScreenProps<RootNativeStackParamList>) => {
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleLogin = () => {
+  const handleSignup = () => {
+    // navigation.replace('Login');
     console.log('Going to Profile Setup');
   };
 
-  const navigateToSignup = () => {
-    navigation.replace('Register');
+  const navigateToLogin = () => {
+    navigation.replace('Login');
   };
+
   return (
     <View style={styles.container}>
-      <Header isGoBack={true} onBack={handleBack} />
+      <Header isGoBack={false} onBack={handleBack} />
       <SafeScreen safeAreaStyle={styles.safeAreaStyle}>
-        <LoginPage onLogin={handleLogin} navigateToSignup={navigateToSignup} />
+        <RegisterPage
+          navigateToLogin={navigateToLogin}
+          onSignup={handleSignup}
+        />
       </SafeScreen>
     </View>
   );
 };
 
-export default Login;
+export default Register;
 
 const styles = StyleSheet.create({
   container: { flex: 1 },

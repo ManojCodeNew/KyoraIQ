@@ -3,6 +3,8 @@ import INTRO2 from '../assets/images/secondScreen.png';
 import INTRO3 from '../assets/images/thirdScreen.png';
 import INTRO4 from '../assets/images/fourthScreen.png';
 import APP_LOGO from '../assets/images/kyoralogo.png';
+import APPLE_LOGO from '../assets/images/appleLogo.png';
+import GOOGLE_LOGO from '../assets/images/googleLogo.png';
 
 export const IMAGES = {
   img_intro1: {
@@ -24,5 +26,13 @@ export const IMAGES = {
   img_logo: {
     img: APP_LOGO,
     alt: 'App Logo',
+  },
+  img_apple: {
+    img: APPLE_LOGO,
+    alt: 'APPLE_LOGO',
+  },
+  img_google: {
+    img: GOOGLE_LOGO,
+    alt: 'GOOGLE_LOGO ',
   },
 };

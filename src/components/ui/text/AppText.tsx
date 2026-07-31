@@ -62,5 +62,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: COLORS.app_8C8694,
     fontFamily: fontFamilies.InterTight.medium,
+    textAlign: 'center',
   },
 });

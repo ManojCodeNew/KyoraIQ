@@ -8,4 +8,5 @@ export const COLORS = {
   app_CACCD7: '#CACCD7',
   app_354078: '#354078',
   app_CCCCCC: '#CCCCCC',
+  app_E8E8EA: '#E8E8EA',
 };

@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
-import AppButton from '../ui/button/AppButton';
-import AppText from '../ui/text/AppText';
-import { heightPixel, widthPixel } from '../../config/responsive';
-import { COLORS } from '../../config/colors';
+import AppButton from '../../ui/button/AppButton';
+import AppText from '../../ui/text/AppText';
+import { heightPixel, widthPixel } from '../../../config/responsive';
+import { COLORS } from '../../../config/colors';
 
 const BackButton = ({ onBack }: { onBack: () => void }) => {
   return (

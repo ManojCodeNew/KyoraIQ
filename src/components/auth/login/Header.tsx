@@ -1,15 +1,21 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import AppImage from '../ui/image/AppImage';
+import AppImage from '../../ui/image/AppImage';
 import BackButton from './BackButton';
-import { COLORS } from '../../config/colors';
-import { IMAGES } from '../../config/image';
-import { heightPixel } from '../../config/responsive';
+import { COLORS } from '../../../config/colors';
+import { IMAGES } from '../../../config/image';
+import { heightPixel } from '../../../config/responsive';
 
-const Header = ({ onBack }: { onBack: () => void }) => {
+const Header = ({
+  onBack,
+  isGoBack,
+}: {
+  onBack: () => void;
+  isGoBack: boolean;
+}) => {
   return (
     <View style={styles.container}>
-      <BackButton onBack={onBack} />
+      {isGoBack && <BackButton onBack={onBack} />}
       <AppImage
         imagePath={IMAGES.img_logo.img}
         imageAlt={IMAGES.img_logo.alt}

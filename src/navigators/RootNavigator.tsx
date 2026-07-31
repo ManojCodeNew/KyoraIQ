@@ -3,6 +3,7 @@ import { RootNativeStackParamList } from '../types/navigator.types';
 import AppInitializer from '../app/initializers/AppInitializer';
 import IntroScreen from '../screens/intro/IntroScreen';
 import Login from '../screens/auth/Login';
+import Register from '../screens/auth/Register';
 
 const Stack = createNativeStackNavigator<RootNativeStackParamList>();
 const RootNavigator = () => {
@@ -21,6 +22,11 @@ const RootNavigator = () => {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={Register}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

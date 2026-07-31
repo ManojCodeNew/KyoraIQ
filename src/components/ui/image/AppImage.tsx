@@ -39,7 +39,10 @@ export default AppImage;
 
 const styles = StyleSheet.create({
   default: {},
-  rounded: {},
+  rounded: {
+    width: widthPixel(30),
+    height: heightPixel(30),
+  },
   thumbnail: {
     width: widthPixel(375),
     height: heightPixel(505),
