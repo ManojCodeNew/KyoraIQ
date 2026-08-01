@@ -40,3 +40,16 @@ export const INTRO_DATA = [
     buttonTitle: 'Get Started',
   },
 ];
+
+export const ROLE_DATA = [
+  {
+    role: 'Client',
+    description: 'I am looking for service',
+    isChecked: false,
+  },
+  {
+    role: 'Consultant',
+    description: 'I am service provider',
+    isChecked: false,
+  },
+];

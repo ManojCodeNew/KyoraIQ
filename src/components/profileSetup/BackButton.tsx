@@ -5,6 +5,7 @@ import { COLORS } from '../../config/colors';
 import AppImage from '../ui/image/AppImage';
 import { IMAGES } from '../../config/image';
 import AppButton from '../ui/button/AppButton';
+import { isIOS } from '../../utils/platformUtil';
 
 const BackButton = ({ onBack }: { onBack: () => void }) => {
   return (
@@ -23,7 +24,7 @@ export default BackButton;
 const styles = StyleSheet.create({
   backButtonStyle: {
     position: 'absolute',
-    top: heightPixel(60),
+    top: isIOS() ? heightPixel(60) : heightPixel(30),
     left: widthPixel(10),
     borderRadius: widthPixel(50),
     backgroundColor: COLORS.app_FFFFFF,

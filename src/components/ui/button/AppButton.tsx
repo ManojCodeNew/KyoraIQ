@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.app_CCCCCC,
   },
   small: {
-    paddingVertical: heightPixel(10),
-    paddingHorizontal: heightPixel(12),
+    width: heightPixel(30),
+    height: heightPixel(30),
     backgroundColor: COLORS.app_CCCCCC,
     borderRadius: widthPixel(12),
   },

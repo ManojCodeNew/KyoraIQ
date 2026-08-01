@@ -5,6 +5,7 @@ import AppButton from '../../ui/button/AppButton';
 import AppTextInput from '../../ui/textInput/AppTextInput';
 import { COLORS } from '../../../config/colors';
 import { heightPixel, widthPixel } from '../../../config/responsive';
+import AppCheckBox from '../../ui/checkBox/AppCheckBox';
 
 const RegisterForm = ({ onSignup }: { onSignup: () => void }) => {
   return (
@@ -12,7 +13,8 @@ const RegisterForm = ({ onSignup }: { onSignup: () => void }) => {
       <AppTextInput placeholderText="Email" variant="default" />
       <AppTextInput placeholderText="Password" variant="default" />
       <View style={styles.agreementContainer}>
-        <View style={styles.checkbox} />
+        {/* <View style={styles.checkbox} /> */}
+        <AppCheckBox checked={false} onPress={() => ''} />
         <AppText textContent="I agree to the" variant="caption" />
         <AppText
           textContent="Privacy Policy"
