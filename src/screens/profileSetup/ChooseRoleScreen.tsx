@@ -7,8 +7,9 @@ import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import { COLORS } from '../../config/colors';
 import ProfileSetupHeader from '../../components/profileSetup/ProfileSetupHeader';
 import RoleCard from '../../components/profileSetup/RoleCard';
-import { widthPixel } from '../../config/responsive';
+import { heightPixel, widthPixel } from '../../config/responsive';
 import { ROLE_DATA } from '../../config/data';
+import ContinueButton from '../../components/profileSetup/ContinueButton';
 
 export interface RoleType {
   role: string;
@@ -23,18 +24,29 @@ const ChooseRoleScreen = ({
     navigation.goBack();
   };
 
+  const handleContinue = () => {
+    navigation.navigate('ProfileDetails');
+  };
   return (
     <View style={styles.profileSetupContainer}>
       <Header onBack={handleBack} />
       <SafeScreen edges={['left', 'right']}>
         <View style={styles.profileSetupBodyContainer}>
-          <ProfileSetupHeader
-            title={'Choose Your Role'}
-            subTitle={"Tell us how you'd like to use the app."}
-          />
-          {ROLE_DATA.map((value, index) => (
-            <RoleCard data={value} index={index} key={index} />
-          ))}
+          <View style={styles.chooseRoleContainer}>
+            <ProfileSetupHeader
+              title={'Choose Your Role'}
+              subTitle={"Tell us how you'd like to use the app."}
+            />
+            <View style={styles.roleCardContainer}>
+              {ROLE_DATA.map((value, index) => (
+                <RoleCard data={value} index={index} key={index} />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.continueButtonContainer}>
+            <ContinueButton onContinue={handleContinue} />
+          </View>
         </View>
       </SafeScreen>
     </View>
@@ -49,6 +61,15 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.app_FFFFFF,
   },
   profileSetupBodyContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingBottom: heightPixel(10),
+  },
+  chooseRoleContainer: {
     gap: widthPixel(32),
   },
+  roleCardContainer: {
+    gap: widthPixel(8),
+  },
+  continueButtonContainer: {},
 });

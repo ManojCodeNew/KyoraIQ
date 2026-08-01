@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: widthPixel(30),
     paddingVertical: heightPixel(16),
     borderRadius: widthPixel(12),
-    gap: widthPixel(8),
   },
   contentContainer: {
     gap: widthPixel(8),

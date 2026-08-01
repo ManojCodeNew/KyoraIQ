@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import AppImage from '../../ui/image/AppImage';
-import BackButton from './BackButton';
 import { COLORS } from '../../../config/colors';
 import { IMAGES } from '../../../config/image';
 import { heightPixel } from '../../../config/responsive';
+import BackButton from '../../ui/backButton/BackButton';
 
 const Header = ({
   onBack,
@@ -15,7 +15,12 @@ const Header = ({
 }) => {
   return (
     <View style={styles.container}>
-      {isGoBack && <BackButton onBack={onBack} />}
+      {isGoBack && (
+        <BackButton
+          onBack={onBack}
+          buttonStyle={{ tintColor: COLORS.app_FFFFFF }}
+        />
+      )}
       <AppImage
         imagePath={IMAGES.img_logo.img}
         imageAlt={IMAGES.img_logo.alt}
@@ -33,5 +38,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.app_111D5F,
+  },
+  backButtonStyle: {
+    backgroundColor: COLORS.app_354078,
+    tintColor: COLORS.app_FFFFFF,
   },
 });

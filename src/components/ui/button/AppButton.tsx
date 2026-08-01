@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   small: {
     width: heightPixel(30),
     height: heightPixel(30),
-    backgroundColor: COLORS.app_CCCCCC,
     borderRadius: widthPixel(12),
   },
 });
