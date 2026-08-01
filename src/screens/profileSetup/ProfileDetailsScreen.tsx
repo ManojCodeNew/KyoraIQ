@@ -24,7 +24,7 @@ const ProfileDetailsScreen = ({
   };
 
   const handleContinue = () => {
-    navigation.navigate('ProfileDetails');
+    navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
   };
   return (
     <View style={styles.profileSetupContainer}>

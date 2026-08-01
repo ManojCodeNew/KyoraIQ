@@ -6,6 +6,8 @@ import Login from '../screens/auth/Login';
 import Register from '../screens/auth/Register';
 import ChooseRoleScreen from '../screens/profileSetup/ChooseRoleScreen';
 import ProfileDetailsScreen from '../screens/profileSetup/ProfileDetailsScreen';
+import Home from '../screens/home/Home';
+import BottomTab from './BottomTab';
 
 const Stack = createNativeStackNavigator<RootNativeStackParamList>();
 const RootNavigator = () => {
@@ -39,6 +41,12 @@ const RootNavigator = () => {
       <Stack.Screen
         name="ProfileDetails"
         component={ProfileDetailsScreen}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="Home"
+        component={BottomTab}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
