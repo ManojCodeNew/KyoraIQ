@@ -8,7 +8,7 @@ const Header = ({ onBack }: { onBack: () => void }) => {
   return (
     <View style={styles.container}>
       <BackButton onBack={onBack} />
-      <ProgressBar />
+      <ProgressBar currentStep={1} totalStep={2} />
     </View>
   );
 };
@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: heightPixel(70),
-    paddingVertical: heightPixel(10),
+    paddingVertical: heightPixel(20),
   },
 });
