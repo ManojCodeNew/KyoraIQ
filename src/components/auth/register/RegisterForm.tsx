@@ -6,15 +6,39 @@ import AppTextInput from '../../ui/textInput/AppTextInput';
 import { COLORS } from '../../../config/colors';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import AppCheckBox from '../../ui/checkBox/AppCheckBox';
+import { FormData } from '../../../hooks/useAuth';
 
-const RegisterForm = ({ onSignup }: { onSignup: () => void }) => {
+interface RegisterFormParam {
+  onSignup: () => void;
+  value: FormData;
+  setValue: React.Dispatch<React.SetStateAction<FormData>>;
+}
+
+const RegisterForm = ({ onSignup, setValue, value }: RegisterFormParam) => {
   return (
     <View style={styles.loginFormContainer}>
-      <AppTextInput placeholderText="Email" variant="default" />
-      <AppTextInput placeholderText="Password" variant="default" />
+      <AppTextInput
+        placeholderText="Email"
+        variant="default"
+        value={value.email}
+        onChangeText={text => setValue(prev => ({ ...prev, email: text }))}
+      />
+      <AppTextInput
+        placeholderText="Password"
+        variant="default"
+        value={value.password}
+        onChangeText={text => setValue(prev => ({ ...prev, password: text }))}
+      />
       <View style={styles.agreementContainer}>
-        {/* <View style={styles.checkbox} /> */}
-        <AppCheckBox checked={false} onPress={() => ''} />
+        <AppCheckBox
+          checked={value.hasAcceptedTerms}
+          onPress={() =>
+            setValue(prev => ({
+              ...prev,
+              hasAcceptedTerms: !value.hasAcceptedTerms,
+            }))
+          }
+        />
         <AppText textContent="I agree to the" variant="caption" />
         <AppText
           textContent="Privacy Policy"

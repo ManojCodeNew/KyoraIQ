@@ -9,6 +9,7 @@ import ProfileSetupHeader from '../../components/profileSetup/ProfileSetupHeader
 import { heightPixel, widthPixel } from '../../config/responsive';
 import ContinueButton from '../../components/profileSetup/ContinueButton';
 import ProfileSetup from '../../components/profileSetup/ProfileSetup';
+import { useAuth } from '../../hooks/useAuth';
 
 export interface RoleType {
   role: string;
@@ -19,12 +20,21 @@ export interface RoleType {
 const ProfileDetailsScreen = ({
   navigation,
 }: NativeStackScreenProps<RootNativeStackParamList>) => {
+  const {
+    profileName,
+    setProfileName,
+    handleProfileName,
+    handleProfileImagePicker,
+  } = useAuth();
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleContinue = () => {
-    navigation.reset({ index: 0, routes: [{ name: 'tabBar' }] });
+  const handleContinue = async () => {
+    const profileSetupStatus = await handleProfileName();
+    if (profileSetupStatus) {
+      navigation.reset({ index: 0, routes: [{ name: 'tabBar' }] });
+    }
   };
   return (
     <View style={styles.profileSetupContainer}>
@@ -37,7 +47,11 @@ const ProfileDetailsScreen = ({
               subTitle={'Upload a profile picture and your name to get started'}
             />
             <View style={styles.roleCardContainer}>
-              <ProfileSetup />
+              <ProfileSetup
+                name={profileName}
+                setName={setProfileName}
+                handleProfileImagePicker={handleProfileImagePicker}
+              />
             </View>
           </View>
 

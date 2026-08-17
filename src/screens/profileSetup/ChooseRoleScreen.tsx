@@ -10,9 +10,10 @@ import RoleCard from '../../components/profileSetup/RoleCard';
 import { heightPixel, widthPixel } from '../../config/responsive';
 import { ROLE_DATA } from '../../config/data';
 import ContinueButton from '../../components/profileSetup/ContinueButton';
+import { Role } from '../../types/auth.types';
 
 export interface RoleType {
-  role: string;
+  role: Role;
   description: string;
   isChecked: boolean;
 }

@@ -6,16 +6,22 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootNativeStackParamList } from '../../types/navigator.types';
 import { widthPixel } from '../../config/responsive';
 import RegisterPage from '../../components/auth/register/RegisterPage';
+import { useAuth } from '../../hooks/useAuth';
 
 const Register = ({
   navigation,
 }: NativeStackScreenProps<RootNativeStackParamList>) => {
+  const { formData, setFormData, handleRegister: register } = useAuth();
+
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleSignup = () => {
-    navigation.navigate('RoleSetup');
+  const handleSignup = async () => {
+    const registerStatus = await register();
+    if (registerStatus) {
+      navigation.navigate('RoleSetup');
+    }
   };
 
   const navigateToLogin = () => {
@@ -29,6 +35,8 @@ const Register = ({
         <RegisterPage
           navigateToLogin={navigateToLogin}
           onSignup={handleSignup}
+          value={formData}
+          setValue={setFormData}
         />
       </SafeScreen>
     </View>

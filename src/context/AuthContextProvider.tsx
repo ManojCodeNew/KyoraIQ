@@ -1,9 +1,9 @@
 import { createContext, useContext, useState } from 'react';
-import { AuthStatus } from '../types/auth.types';
+import { AuthState } from '../types/auth.types';
 
 interface AuthContextType {
-  authStatus: AuthStatus;
-  setAuthStatus: React.Dispatch<React.SetStateAction<AuthStatus>>;
+  authState: AuthState;
+  setAuthState: React.Dispatch<React.SetStateAction<AuthState>>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -13,12 +13,24 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [authStatus, setAuthStatus] = useState<AuthStatus>({
+  const [authState, setAuthState] = useState<AuthState>({
     isAuthenticated: false,
-    user: null,
+    user: {
+      userId: '00',
+      email: '',
+      hasAcceptedTerms: false,
+      role: 'client',
+      profile: {
+        name: '',
+        profileImagePath: '',
+      },
+    },
   });
+
+  console.log('User Info :', authState);
+
   return (
-    <AuthContext.Provider value={{ authStatus, setAuthStatus }}>
+    <AuthContext.Provider value={{ authState, setAuthState }}>
       {children}
     </AuthContext.Provider>
   );

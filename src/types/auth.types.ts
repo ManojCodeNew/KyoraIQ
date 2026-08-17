@@ -13,7 +13,7 @@ export interface User {
   profile: UserProfile;
 }
 
-export interface AuthStatus {
+export interface AuthState {
   isAuthenticated: boolean;
-  user: User | null;
+  user: User;
 }

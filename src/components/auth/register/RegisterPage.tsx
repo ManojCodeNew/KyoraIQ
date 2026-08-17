@@ -5,13 +5,21 @@ import { heightPixel, widthPixel } from '../../../config/responsive';
 import { COLORS } from '../../../config/colors';
 import SocialLogin from '../SocialLogin';
 import RegisterForm from './RegisterForm';
+import { FormData } from '../../../hooks/useAuth';
 
 export interface RegisterPageProps {
   navigateToLogin: () => void;
   onSignup: () => void;
+  value: FormData;
+  setValue: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
-const RegisterPage = ({ navigateToLogin, onSignup }: RegisterPageProps) => {
+const RegisterPage = ({
+  navigateToLogin,
+  onSignup,
+  value,
+  setValue,
+}: RegisterPageProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.registerFormSection}>
@@ -19,7 +27,7 @@ const RegisterPage = ({ navigateToLogin, onSignup }: RegisterPageProps) => {
           <AppText textContent="Let’s dive in!" variant="title" />
           <AppText textContent="Sign up to get started." variant="caption" />
         </View>
-        <RegisterForm onSignup={onSignup} />
+        <RegisterForm onSignup={onSignup} value={value} setValue={setValue} />
         <SocialLogin />
       </View>
       <View style={styles.registerFooterSection}>

@@ -7,11 +7,27 @@ import { COLORS } from '../../../config/colors';
 import { widthPixel } from '../../../config/responsive';
 import { LoginPageProps } from './LoginPage';
 
-const LoginForm = ({ onLogin, navigateToSignup }: LoginPageProps) => {
+const LoginForm = ({
+  onLogin,
+  navigateToSignup,
+  value,
+  setValue,
+}: LoginPageProps) => {
   return (
     <View style={styles.loginFormContainer}>
-      <AppTextInput placeholderText="Email" variant="default" />
-      <AppTextInput placeholderText="Password" variant="default" />
+      <AppTextInput
+        placeholderText="Email"
+        variant="default"
+        value={value.email}
+        onChangeText={text => setValue(prev => ({ ...prev, email: text }))}
+      />
+      <AppTextInput
+        placeholderText="Password"
+        variant="default"
+        secureTextEntry
+        value={value.password}
+        onChangeText={text => setValue(prev => ({ ...prev, password: text }))}
+      />
       <AppButton
         variant="primary"
         onClick={() => onLogin()}

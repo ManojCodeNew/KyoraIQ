@@ -5,13 +5,21 @@ import { heightPixel, widthPixel } from '../../../config/responsive';
 import { COLORS } from '../../../config/colors';
 import SocialLogin from '../SocialLogin';
 import LoginForm from './LoginForm';
+import { FormData } from '../../../hooks/useAuth';
 
 export interface LoginPageProps {
   onLogin: () => void;
   navigateToSignup: () => void;
+  value: FormData;
+  setValue: React.Dispatch<React.SetStateAction<FormData>>;
 }
 
-const LoginPage = ({ onLogin, navigateToSignup }: LoginPageProps) => {
+const LoginPage = ({
+  onLogin,
+  navigateToSignup,
+  value,
+  setValue,
+}: LoginPageProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.loginFormSection}>
@@ -22,7 +30,12 @@ const LoginPage = ({ onLogin, navigateToSignup }: LoginPageProps) => {
             variant="caption"
           />
         </View>
-        <LoginForm onLogin={onLogin} navigateToSignup={navigateToSignup} />
+        <LoginForm
+          onLogin={onLogin}
+          navigateToSignup={navigateToSignup}
+          value={value}
+          setValue={setValue}
+        />
         <SocialLogin />
       </View>
 

@@ -5,6 +5,7 @@ import AppCheckBox from '../ui/checkBox/AppCheckBox';
 import { COLORS } from '../../config/colors';
 import { fontPixel, heightPixel, widthPixel } from '../../config/responsive';
 import { RoleType } from '../../screens/profileSetup/ChooseRoleScreen';
+import { useAuthContext } from '../../context/AuthContextProvider';
 
 interface RoleCardProp {
   data: RoleType;
@@ -12,6 +13,7 @@ interface RoleCardProp {
 }
 
 const RoleCard = ({ data, index }: RoleCardProp) => {
+  const { authState, setAuthState } = useAuthContext();
   return (
     <View style={styles.roleCardContainer} key={index}>
       <View style={styles.contentContainer}>
@@ -24,8 +26,13 @@ const RoleCard = ({ data, index }: RoleCardProp) => {
       </View>
       <View style={styles.actionsContainer}>
         <AppCheckBox
-          checked={data.isChecked}
-          onPress={() => ''}
+          checked={authState.user.role === data.role}
+          onPress={() =>
+            setAuthState(prev => ({
+              ...prev,
+              user: { ...prev.user, role: data.role },
+            }))
+          }
           variant="circle"
         />
       </View>

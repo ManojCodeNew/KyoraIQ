@@ -7,27 +7,45 @@ import { COLORS } from '../../config/colors';
 import { fontPixel, heightPixel, widthPixel } from '../../config/responsive';
 import AppTextInput from '../ui/textInput/AppTextInput';
 import { fontFamilies } from '../../config/font';
-import { handleImagePicker } from '../../utils/handleImagePicker';
+import { useAuthContext } from '../../context/AuthContextProvider';
 
-const ProfileSetup = () => {
+interface ProfileSetupParams {
+  name: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  handleProfileImagePicker: () => Promise<void>;
+}
+
+const ProfileSetup = ({
+  name,
+  setName,
+  handleProfileImagePicker,
+}: ProfileSetupParams) => {
+  const { authState } = useAuthContext();
   return (
     <View style={styles.profileSetupContainer}>
       <View style={styles.profileImageSetContainer}>
         <AppImage
-          imagePath={IMAGES.img_profile}
+          imagePath={
+            authState.user.profile.profileImagePath?.trim()
+              ? { uri: authState.user.profile.profileImagePath }
+              : IMAGES.img_profile
+          }
           variant="profile_setter"
           resizeMode="contain"
         />
+
         <AppText
           textContent="Upload Photo"
           textStyle={styles.uploadPhotoTextStyle}
           variant="body"
-          onPress={handleImagePicker}
+          onPress={handleProfileImagePicker}
         />
       </View>
       <AppTextInput
         placeholderText="Name"
         textInputStyle={styles.textInputStyle}
+        value={name}
+        onChangeText={text => setName(text)}
       />
     </View>
   );

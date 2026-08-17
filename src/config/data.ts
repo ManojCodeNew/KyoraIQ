@@ -1,3 +1,4 @@
+import { RoleType } from '../screens/profileSetup/ChooseRoleScreen';
 import { IMAGES } from './image';
 
 export const INTRO_DATA = [
@@ -37,15 +38,22 @@ export const INTRO_DATA = [
   },
 ];
 
-export const ROLE_DATA = [
+export const ROLE_DATA: RoleType[] = [
   {
-    role: 'Client',
+    role: 'client',
     description: 'I am looking for service',
     isChecked: true,
   },
   {
-    role: 'Consultant',
+    role: 'consultant',
     description: 'I am service provider',
     isChecked: false,
+  },
+];
+
+export const USER_DATA = [
+  {
+    userId: '01',
+    email: 'manoj@gmail.com',
   },
 ];
