@@ -9,7 +9,7 @@ interface ProgressBarProp {
 }
 
 const ProgressBar = ({ currentStep, totalStep }: ProgressBarProp) => {
-  const progress = (currentStep / totalStep) * 100;
+  const progress = ((currentStep - 1) / totalStep) * 100;
   return (
     <View style={styles.progressContainer}>
       <View style={[styles.progressFill, { width: `${progress}%` }]} />

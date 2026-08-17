@@ -30,7 +30,8 @@ const ChooseRoleScreen = ({
   };
   return (
     <View style={styles.profileSetupContainer}>
-      <Header onBack={handleBack} />
+      <Header onBack={handleBack} currentStep={1} totalStep={2} />
+
       <SafeScreen edges={['left', 'right']}>
         <View style={styles.profileSetupBodyContainer}>
           <View style={styles.chooseRoleContainer}>

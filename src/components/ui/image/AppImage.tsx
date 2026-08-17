@@ -67,5 +67,6 @@ const styles = StyleSheet.create({
   profile_setter: {
     width: widthPixel(100),
     height: heightPixel(100),
+    borderRadius: heightPixel(100),
   },
 });

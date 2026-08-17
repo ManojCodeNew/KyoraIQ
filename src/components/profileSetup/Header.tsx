@@ -6,14 +6,20 @@ import ProgressBar from './ProgressBar';
 import { isIOS } from '../../utils/platformUtil';
 import { COLORS } from '../../config/colors';
 
-const Header = ({ onBack }: { onBack: () => void }) => {
+interface HeaderParams {
+  onBack: () => void;
+  currentStep: number;
+  totalStep: number;
+}
+
+const Header = ({ onBack, currentStep, totalStep }: HeaderParams) => {
   return (
     <View style={styles.container}>
       <BackButton
         onBack={onBack}
         buttonStyle={{ tintColor: COLORS.app_000000 }}
       />
-      <ProgressBar currentStep={1} totalStep={2} />
+      <ProgressBar currentStep={currentStep} totalStep={totalStep} />
     </View>
   );
 };

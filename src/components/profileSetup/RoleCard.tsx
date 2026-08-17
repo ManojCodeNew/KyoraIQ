@@ -18,7 +18,7 @@ const RoleCard = ({ data, index }: RoleCardProp) => {
     <View style={styles.roleCardContainer} key={index}>
       <View style={styles.contentContainer}>
         <AppText
-          textContent={data.role}
+          textContent={data.role.slice(0, 1).toUpperCase() + data.role.slice(1)}
           variant="btnText"
           textStyle={styles.roleTitle}
         />

@@ -20,6 +20,7 @@ const LoginForm = ({
         variant="default"
         value={value.email}
         onChangeText={text => setValue(prev => ({ ...prev, email: text }))}
+        textContentType="emailAddress"
       />
       <AppTextInput
         placeholderText="Password"

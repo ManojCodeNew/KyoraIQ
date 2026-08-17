@@ -38,7 +38,7 @@ const ProfileDetailsScreen = ({
   };
   return (
     <View style={styles.profileSetupContainer}>
-      <Header onBack={handleBack} />
+      <Header onBack={handleBack} currentStep={2} totalStep={2} />
       <SafeScreen edges={['left', 'right']}>
         <View style={styles.profileSetupBodyContainer}>
           <View style={styles.profileContainer}>

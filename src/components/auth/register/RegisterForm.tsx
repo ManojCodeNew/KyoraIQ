@@ -22,11 +22,13 @@ const RegisterForm = ({ onSignup, setValue, value }: RegisterFormParam) => {
         variant="default"
         value={value.email}
         onChangeText={text => setValue(prev => ({ ...prev, email: text }))}
-      />
+        textContentType="emailAddress"
+      />  
       <AppTextInput
         placeholderText="Password"
         variant="default"
         value={value.password}
+        secureTextEntry
         onChangeText={text => setValue(prev => ({ ...prev, password: text }))}
       />
       <View style={styles.agreementContainer}>

@@ -40,7 +40,7 @@ export const useAuth = (): UseAuthReturn => {
       Alert.alert('Error', 'Please Enter a email');
       return false;
     }
-
+    
     const isEmailExist = USER_DATA.find(user => user.email === trimmedEmail);
 
     if (!isEmailExist) {
@@ -79,7 +79,7 @@ export const useAuth = (): UseAuthReturn => {
     }
 
     if (!formData.hasAcceptedTerms) {
-      Alert.alert('Error', 'Please accept teh terms and conditions');
+      Alert.alert('Error', 'Please accept the terms and conditions');
       return false;
     }
 
