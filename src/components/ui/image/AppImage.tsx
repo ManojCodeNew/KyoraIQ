@@ -14,7 +14,8 @@ type AppImageVariantType =
   | 'rounded'
   | 'thumbnail'
   | 'headerLogo'
-  | 'arrow';
+  | 'arrow'
+  | 'profile_setter';
 
 interface AppImagePropsType extends ImageProps {
   variant?: AppImageVariantType;
@@ -43,7 +44,10 @@ const AppImage = ({
 export default AppImage;
 
 const styles = StyleSheet.create({
-  default: {},
+  default: {
+    width: widthPixel(24),
+    height: heightPixel(24),
+  },
   rounded: {
     width: widthPixel(30),
     height: heightPixel(30),
@@ -59,5 +63,9 @@ const styles = StyleSheet.create({
   arrow: {
     width: widthPixel(32),
     height: heightPixel(32),
+  },
+  profile_setter: {
+    width: widthPixel(100),
+    height: heightPixel(100),
   },
 });

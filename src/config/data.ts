@@ -41,7 +41,7 @@ export const ROLE_DATA = [
   {
     role: 'Client',
     description: 'I am looking for service',
-    isChecked: false,
+    isChecked: true,
   },
   {
     role: 'Consultant',

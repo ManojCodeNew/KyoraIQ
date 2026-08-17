@@ -1,23 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import BackButton from '../../components/ui/backButton/BackButton';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootNativeStackParamList } from '../../types/navigator.types';
+import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
+import AppText from '../../components/ui/text/AppText';
 
-const Home = ({
-  navigation,
-}: NativeStackScreenProps<RootNativeStackParamList>) => {
-  //   const handleBack = () => {
-  //     navigation.goBack();
-  //   };
+const Home = () => {
   return (
-    <View>
-      {/* <BackButton onBack={handleBack} /> */}
-      <Text>Home</Text>
-    </View>
+    <SafeScreen>
+      <View style={styles.container}>
+        <AppText textContent="Home" variant="title" />
+      </View>
+    </SafeScreen>
   );
 };
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+});
