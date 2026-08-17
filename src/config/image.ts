@@ -6,44 +6,26 @@ import APP_LOGO from '../assets/images/kyoralogo.png';
 import APPLE_LOGO from '../assets/images/appleLogo.png';
 import GOOGLE_LOGO from '../assets/images/googleLogo.png';
 import BACK_ARROW from '../assets/images/back.png';
-// import BACK_ARROW from '../assets/images/back.png';
 import PROFILE_SETUP from '../assets/images/profileSetup.png';
+import HOME from '../assets/images/linear_home.png';
+import CHAT from '../assets/images/linear_chat.png';
+import HISTORY from '../assets/images/linear_history.png';
+import PROFILE from '../assets/images/linear_profile.png';
 
 export const IMAGES = {
-  img_intro1: {
-    img: INTRO1,
-    alt: 'Intro screen 1',
-  },
-  img_intro2: {
-    img: INTRO2,
-    alt: 'Intro screen 2',
-  },
-  img_intro3: {
-    img: INTRO3,
-    alt: 'Intro screen 3',
-  },
-  img_intro4: {
-    img: INTRO4,
-    alt: 'Intro screen 4',
-  },
-  img_logo: {
-    img: APP_LOGO,
-    alt: 'App Logo',
-  },
-  img_apple: {
-    img: APPLE_LOGO,
-    alt: 'APPLE_LOGO',
-  },
-  img_google: {
-    img: GOOGLE_LOGO,
-    alt: 'GOOGLE_LOGO ',
-  },
-  img_back_arrow: {
-    img: BACK_ARROW,
-    alt: 'img_back_arrow ',
-  },
-  img_profile: {
-    img: PROFILE_SETUP,
-    alt: 'img_profile ',
+  img_intro1: INTRO1,
+  img_intro2: INTRO2,
+  img_intro3: INTRO3,
+  img_intro4: INTRO4,
+  img_logo: APP_LOGO,
+  img_apple: APPLE_LOGO,
+  img_google: GOOGLE_LOGO,
+  img_back_arrow: BACK_ARROW,
+  img_profile: PROFILE_SETUP,
+  tabBar: {
+    img_home: HOME,
+    img_chat: CHAT,
+    img_history: HISTORY,
+    img_profile: PROFILE,
   },
 };
