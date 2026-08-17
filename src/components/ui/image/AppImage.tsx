@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
     height: heightPixel(100),
   },
   arrow: {
-    width: widthPixel(32),
-    height: heightPixel(32),
+    width: widthPixel(24),
+    height: heightPixel(20),
   },
   profile_setter: {
     width: widthPixel(100),

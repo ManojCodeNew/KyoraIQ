@@ -7,6 +7,7 @@ import { COLORS } from '../../config/colors';
 import { fontPixel, heightPixel, widthPixel } from '../../config/responsive';
 import AppTextInput from '../ui/textInput/AppTextInput';
 import { fontFamilies } from '../../config/font';
+import { handleImagePicker } from '../../utils/handleImagePicker';
 
 const ProfileSetup = () => {
   return (
@@ -21,6 +22,7 @@ const ProfileSetup = () => {
           textContent="Upload Photo"
           textStyle={styles.uploadPhotoTextStyle}
           variant="body"
+          onPress={handleImagePicker}
         />
       </View>
       <AppTextInput

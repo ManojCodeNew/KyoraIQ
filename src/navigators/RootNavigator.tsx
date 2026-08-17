@@ -6,7 +6,6 @@ import Login from '../screens/auth/Login';
 import Register from '../screens/auth/Register';
 import ChooseRoleScreen from '../screens/profileSetup/ChooseRoleScreen';
 import ProfileDetailsScreen from '../screens/profileSetup/ProfileDetailsScreen';
-import Home from '../screens/home/Home';
 import BottomTab from './BottomTab';
 
 const Stack = createNativeStackNavigator<RootNativeStackParamList>();
@@ -45,7 +44,7 @@ const RootNavigator = () => {
       />
 
       <Stack.Screen
-        name="Home"
+        name="tabBar"
         component={BottomTab}
         options={{ headerShown: false }}
       />

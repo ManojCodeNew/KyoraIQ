@@ -56,5 +56,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Kyra IQ needs access to your photos so you can select a profile picture.</string>
+
+	<key>NSCameraUsageDescription</key>
+	<string>Kyra IQ needs access to your camera so you can take a profile picture.</string>
+	
 </dict>
 </plist>

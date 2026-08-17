@@ -5,7 +5,7 @@ export type RootNativeStackParamList = {
   Register: undefined;
   RoleSetup: undefined;
   ProfileDetails: undefined;
-  Home: undefined;
+  tabBar: undefined;
 };
 
 export type RootBottomTabParamList = {
