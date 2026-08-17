@@ -21,11 +21,7 @@ const Header = ({
           buttonStyle={{ tintColor: COLORS.app_FFFFFF }}
         />
       )}
-      <AppImage
-        imagePath={IMAGES.img_logo.img}
-        imageAlt={IMAGES.img_logo.alt}
-        variant="headerLogo"
-      />
+      <AppImage imagePath={IMAGES.img_logo} variant="headerLogo" />
     </View>
   );
 };

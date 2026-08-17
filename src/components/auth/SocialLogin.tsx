@@ -20,18 +20,10 @@ const SocialLogin = () => {
       </View>
       <View style={styles.iconContainer}>
         <View style={styles.iconStyle}>
-          <AppImage
-            imagePath={IMAGES.img_apple.img}
-            imageAlt={IMAGES.img_apple.alt}
-            variant="rounded"
-          />
+          <AppImage imagePath={IMAGES.img_apple} variant="rounded" />
         </View>
         <View style={styles.iconStyle}>
-          <AppImage
-            imagePath={IMAGES.img_google.img}
-            imageAlt={IMAGES.img_google.alt}
-            variant="rounded"
-          />
+          <AppImage imagePath={IMAGES.img_google} variant="rounded" />
         </View>
       </View>
     </View>

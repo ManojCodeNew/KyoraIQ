@@ -9,7 +9,6 @@ interface IntroSlideType {
   title: string;
   description: string;
   imagePath: ImageSourcePropType;
-  imageAlt: string;
   buttonTitle: string;
 }
 
@@ -19,7 +18,6 @@ const IntroSlide = ({ item }: { item: IntroSlideType }) => {
       <View style={styles.imageContainer}>
         <AppImage
           imagePath={item.imagePath}
-          imageAlt={item.imageAlt}
           variant="thumbnail"
           resizeMode="contain"
         />

@@ -6,6 +6,8 @@ import Chat from '../screens/home/Chat';
 import Profile from '../screens/home/Profile';
 import { COLORS } from '../config/colors';
 import { heightPixel } from '../config/responsive';
+import AppImage from '../components/ui/image/AppImage';
+import { IMAGES } from '../config/image';
 
 const Tab = createBottomTabNavigator<RootBottomTabParamList>();
 
@@ -20,7 +22,15 @@ const BottomTab = () => {
         },
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+          
+          ),
+        }}
+      />
       <Tab.Screen name="History" component={History} />
       <Tab.Screen name="Chat" component={Chat} />
       <Tab.Screen name="Profile" component={Profile} />

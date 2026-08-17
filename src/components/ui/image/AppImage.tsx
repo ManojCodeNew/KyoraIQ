@@ -20,7 +20,7 @@ interface AppImagePropsType extends ImageProps {
   variant?: AppImageVariantType;
   imageStyle?: StyleProp<ImageStyle>;
   imagePath: ImageSourcePropType;
-  imageAlt: string;
+  imageAlt?: string;
 }
 
 const AppImage = ({

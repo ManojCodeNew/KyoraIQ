@@ -11,10 +11,7 @@ const ProfileSetup = () => {
   return (
     <View style={styles.profileSetupContainer}>
       <View style={styles.profileImageSetContainer}>
-        <AppImage
-          imagePath={IMAGES.img_profile.img}
-          imageAlt={IMAGES.img_profile.alt}
-        />
+        <AppImage imagePath={IMAGES.img_profile} />
         <AppText
           textContent="Upload Photo"
           textStyle={styles.uploadPhotoTextStyle}

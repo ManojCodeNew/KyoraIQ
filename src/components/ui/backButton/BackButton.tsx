@@ -20,8 +20,7 @@ const BackButton = ({ onBack, buttonStyle }: BackButtonProps) => {
     >
       <AppImage
         variant="arrow"
-        imagePath={IMAGES.img_back_arrow.img}
-        imageAlt={IMAGES.img_back_arrow.alt}
+        imagePath={IMAGES.img_back_arrow}
         imageStyle={buttonStyle}
       />
     </AppButton>
