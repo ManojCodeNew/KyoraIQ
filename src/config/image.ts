@@ -12,6 +12,8 @@ import CHAT from '../assets/images/linear_chat.png';
 import HISTORY from '../assets/images/linear_history.png';
 import PROFILE from '../assets/images/linear_profile.png';
 import RIGHT_ARROW from '../assets/images/ic_right_arrow.png';
+import CHECKED from '../assets/images/ic_checked.png';
+
 export const IMAGES = {
   img_intro1: INTRO1,
   img_intro2: INTRO2,
@@ -23,6 +25,7 @@ export const IMAGES = {
   img_back_arrow: BACK_ARROW,
   img_profile: PROFILE_SETUP,
   img_right_arrow: RIGHT_ARROW,
+  img_checked: CHECKED,
   tabBar: {
     img_home: HOME,
     img_chat: CHAT,
