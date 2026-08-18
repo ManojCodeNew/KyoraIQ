@@ -5,7 +5,7 @@ import { IMAGES } from '../../config/image';
 export type IconLabel = 'home' | 'chat' | 'history' | 'profile';
 
 const IconProvider = ({
-  focused,
+  // focused,
   icon_label,
 }: {
   focused: boolean;

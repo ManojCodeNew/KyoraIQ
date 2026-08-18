@@ -25,12 +25,15 @@ const RootNavigator = () => {
       <Stack.Screen
         name="Login"
         component={Login}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          statusBarStyle: 'light',
+        }}
       />
       <Stack.Screen
         name="Register"
         component={Register}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, statusBarStyle: 'light' }}
       />
       <Stack.Screen
         name="RoleSetup"

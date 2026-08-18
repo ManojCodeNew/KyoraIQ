@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
     height: heightPixel(505),
   },
   headerLogo: {
-    width: widthPixel(64),
-    height: heightPixel(100),
+    width: widthPixel(104),
+    height: heightPixel(200),
   },
   arrow: {
     width: widthPixel(24),
