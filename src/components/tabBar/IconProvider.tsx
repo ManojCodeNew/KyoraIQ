@@ -18,9 +18,10 @@ const IconProvider = ({
         <AppImage
           imagePath={IMAGES.tabBar.img_home}
           variant="default"
-          imageStyle={{
-            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          }}
+          tintColor={focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC}
+          // imageStyle={{
+          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          // }}
         />
       )}
       {icon_label === 'chat' && (

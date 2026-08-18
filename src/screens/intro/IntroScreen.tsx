@@ -33,7 +33,7 @@ const IntroScreen = ({
   };
 
   return (
-    <SafeScreen edges={['top', 'bottom']}>
+    <SafeScreen edges={['top']}>
       <View style={styles.contentContainer}>
         <IntroSlide item={INTRO_DATA[currentSlideIndex]} />
 

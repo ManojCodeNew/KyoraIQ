@@ -40,7 +40,7 @@ export const useAuth = (): UseAuthReturn => {
       Alert.alert('Error', 'Please Enter a email');
       return false;
     }
-    
+
     const isEmailExist = USER_DATA.find(user => user.email === trimmedEmail);
 
     if (!isEmailExist) {
@@ -108,7 +108,7 @@ export const useAuth = (): UseAuthReturn => {
   const handleProfileName = async (): Promise<boolean> => {
     const trimmedName = profileName.trim();
     if (!trimmedName) {
-      Alert.alert('Error', 'Please Enter a email');
+      Alert.alert('Error', 'Please Enter a name');
       return false;
     }
 
