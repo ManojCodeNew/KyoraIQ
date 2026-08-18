@@ -1,6 +1,5 @@
 import React from 'react';
 import AppImage from '../ui/image/AppImage';
-import { COLORS } from '../../config/colors';
 import { IMAGES } from '../../config/image';
 
 export type IconLabel = 'home' | 'chat' | 'history' | 'profile';
@@ -20,9 +19,9 @@ const IconProvider = ({
           showLoader={false}
           variant="default"
           // tintColor={focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC}
-          imageStyle={{
-            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          }}
+          // imageStyle={{
+          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          // }}
         />
       )}
       {icon_label === 'chat' && (
@@ -30,9 +29,9 @@ const IconProvider = ({
           imagePath={IMAGES.tabBar.img_chat}
           variant="default"
           showLoader={false}
-          imageStyle={{
-            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          }}
+          // imageStyle={{
+          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          // }}
         />
       )}
       {icon_label === 'history' && (
@@ -40,9 +39,9 @@ const IconProvider = ({
           imagePath={IMAGES.tabBar.img_history}
           showLoader={false}
           variant="default"
-          imageStyle={{
-            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          }}
+          // imageStyle={{
+          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          // }}
         />
       )}
       {icon_label === 'profile' && (
@@ -50,9 +49,9 @@ const IconProvider = ({
           imagePath={IMAGES.tabBar.img_profile}
           showLoader={false}
           variant="default"
-          imageStyle={{
-            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          }}
+          // imageStyle={{
+          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          // }}
         />
       )}
     </>

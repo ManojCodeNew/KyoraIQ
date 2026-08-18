@@ -18,7 +18,6 @@ const AppCheckBox = ({
   variant = 'square',
   checked,
   onPress,
-  ...rest
 }: AppCheckBoxProps) => {
   return (
     <AppButton
@@ -33,7 +32,6 @@ const AppCheckBox = ({
           ? styles.squareChecked
           : {},
       ]}
-      {...rest}
     >
       {checked && variant === 'square' && (
         <AppImage
@@ -79,6 +77,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.app_8C8694,
     borderWidth: widthPixel(1),
     backgroundColor: COLORS.app_111D5F,
+    alignItems: 'center',
   },
   innerCircle: {
     width: widthPixel(10),
@@ -90,6 +89,5 @@ const styles = StyleSheet.create({
     flex: 1,
     width: widthPixel(13),
     height: widthPixel(13),
-    alignItems: 'center',
   },
 });

@@ -1,15 +1,10 @@
-import {
-  ActivityIndicator,
-  ImageStyle,
-  StyleProp,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { ActivityIndicator, StyleProp, StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import FastImage, {
   FastImageProps,
   Source,
+  ImageStyle as FastImageStyleProps,
 } from '@d11/react-native-fast-image';
 import { COLORS } from '../../../config/colors';
 
@@ -26,7 +21,7 @@ export type AppImageSource = number | Source;
 interface AppImagePropsType
   extends Omit<FastImageProps, 'source' | 'resizeMode'> {
   variant?: AppImageVariantType;
-  imageStyle?: StyleProp<ImageStyle>;
+  imageStyle?: StyleProp<FastImageStyleProps>;
   fallBackImage?: AppImageSource;
   showLoader?: boolean;
   imagePath: AppImageSource;
@@ -54,12 +49,12 @@ const AppImage = ({
   };
 
   return (
-    <View style={[styles[variant], imageStyle]}>
+    <View style={[styles[variant], imageStyle, styles.clip]}>
       <FastImage
         source={resolvedImage}
         resizeMode={FastImage.resizeMode.contain}
-        style={StyleSheet.absoluteFill}
-        onError={() => handleError}
+        style={[StyleSheet.absoluteFill, styles[variant], imageStyle]}
+        onError={() => handleError()}
         onLoadEnd={() => setIsLoading(false)}
         {...imageProps}
       />
@@ -102,5 +97,8 @@ const styles = StyleSheet.create({
     width: widthPixel(100),
     height: heightPixel(100),
     borderRadius: heightPixel(100),
+  },
+  clip: {
+    overflow: 'hidden',
   },
 });
