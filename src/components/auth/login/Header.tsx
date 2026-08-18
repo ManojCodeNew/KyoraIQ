@@ -16,12 +16,13 @@ const Header = ({
   return (
     <View style={styles.container}>
       {isGoBack && (
-        <BackButton
-          onBack={onBack}
-          buttonStyle={{ tintColor: COLORS.app_FFFFFF }}
-        />
+        <BackButton onBack={onBack} buttonColor={COLORS.app_FFFFFF} />
       )}
-      <AppImage imagePath={IMAGES.img_logo} variant="headerLogo" />
+      <AppImage
+        imagePath={IMAGES.img_logo}
+        showLoader={false}
+        variant="headerLogo"
+      />
     </View>
   );
 };

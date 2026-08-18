@@ -30,8 +30,8 @@ const ProfileSetup = ({
               ? { uri: authState.user.profile.profileImagePath }
               : IMAGES.img_profile
           }
+          showLoader={true}
           variant="profile_setter"
-          resizeMode="contain"
         />
 
         <AppText

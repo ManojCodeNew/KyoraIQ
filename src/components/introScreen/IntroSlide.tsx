@@ -1,14 +1,14 @@
-import { ImageSourcePropType, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import AppText from '../ui/text/AppText';
-import AppImage from '../ui/image/AppImage';
+import AppImage, { AppImageSource } from '../ui/image/AppImage';
 import { widthPixel } from '../../config/responsive';
 
 interface IntroSlideType {
   id: number;
   title: string;
   description: string;
-  imagePath: ImageSourcePropType;
+  imagePath: AppImageSource;
   buttonTitle: string;
 }
 
@@ -18,8 +18,8 @@ const IntroSlide = ({ item }: { item: IntroSlideType }) => {
       <View style={styles.imageContainer}>
         <AppImage
           imagePath={item.imagePath}
+          showLoader={true}
           variant="thumbnail"
-          resizeMode="contain"
         />
       </View>
       <View style={styles.textContainer}>

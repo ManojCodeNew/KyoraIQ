@@ -1,13 +1,17 @@
 import {
-  Image,
-  ImageProps,
-  ImageSourcePropType,
+  ActivityIndicator,
   ImageStyle,
   StyleProp,
   StyleSheet,
+  View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
+import FastImage, {
+  FastImageProps,
+  Source,
+} from '@d11/react-native-fast-image';
+import { COLORS } from '../../../config/colors';
 
 type AppImageVariantType =
   | 'default'
@@ -17,27 +21,57 @@ type AppImageVariantType =
   | 'arrow'
   | 'profile_setter';
 
-interface AppImagePropsType extends ImageProps {
+export type AppImageSource = number | Source;
+
+interface AppImagePropsType
+  extends Omit<FastImageProps, 'source' | 'resizeMode'> {
   variant?: AppImageVariantType;
   imageStyle?: StyleProp<ImageStyle>;
-  imagePath: ImageSourcePropType;
-  imageAlt?: string;
+  fallBackImage?: AppImageSource;
+  showLoader?: boolean;
+  imagePath: AppImageSource;
 }
 
 const AppImage = ({
   variant = 'default',
   imagePath,
   imageStyle,
-  imageAlt,
-  ...rest
+  showLoader = true,
+  fallBackImage,
+  ...imageProps
 }: AppImagePropsType) => {
+  const [isLoading, setIsLoading] = useState<boolean>(showLoader);
+  const [hasError, setHasError] = useState<boolean>(false);
+
+  // validation
+  const resolvedImage = hasError && fallBackImage ? fallBackImage : imagePath;
+
+  const handleError = () => {
+    if (fallBackImage) {
+      setHasError(true);
+    }
+    setIsLoading(false);
+  };
+
   return (
-    <Image
-      source={imagePath}
-      alt={imageAlt}
-      style={[styles[variant], imageStyle]}
-      {...rest}
-    />
+    <View style={[styles[variant], imageStyle]}>
+      <FastImage
+        source={resolvedImage}
+        resizeMode={FastImage.resizeMode.contain}
+        style={StyleSheet.absoluteFill}
+        onError={() => handleError}
+        onLoadEnd={() => setIsLoading(false)}
+        {...imageProps}
+      />
+
+      {isLoading && (
+        <ActivityIndicator
+          size={'small'}
+          color={COLORS.app_111D5F}
+          style={StyleSheet.absoluteFill}
+        />
+      )}
+    </View>
   );
 };
 

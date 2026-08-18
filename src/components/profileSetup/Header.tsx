@@ -15,10 +15,7 @@ interface HeaderParams {
 const Header = ({ onBack, currentStep, totalStep }: HeaderParams) => {
   return (
     <View style={styles.container}>
-      <BackButton
-        onBack={onBack}
-        buttonStyle={{ tintColor: COLORS.app_000000 }}
-      />
+      <BackButton onBack={onBack} buttonColor={COLORS.app_000000} />
       <ProgressBar currentStep={currentStep} totalStep={totalStep} />
     </View>
   );

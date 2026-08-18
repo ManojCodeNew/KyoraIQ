@@ -1,17 +1,21 @@
-import { ImageStyle, StyleProp, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import AppImage from '../image/AppImage';
 import { IMAGES } from '../../../config/image';
 import AppButton from '../button/AppButton';
 import { isIOS } from '../../../utils/platformUtil';
+import { COLORS } from '../../../config/colors';
 
 interface BackButtonProps {
   onBack: () => void;
-  buttonStyle?: StyleProp<ImageStyle>;
+  buttonColor?: string;
 }
 
-const BackButton = ({ onBack, buttonStyle }: BackButtonProps) => {
+const BackButton = ({
+  onBack,
+  buttonColor = COLORS.app_FFFFFF,
+}: BackButtonProps) => {
   return (
     <AppButton
       onClick={() => onBack()}
@@ -21,7 +25,8 @@ const BackButton = ({ onBack, buttonStyle }: BackButtonProps) => {
       <AppImage
         variant="arrow"
         imagePath={IMAGES.img_back_arrow}
-        imageStyle={buttonStyle}
+        showLoader={false}
+        tintColor={buttonColor}
       />
     </AppButton>
   );

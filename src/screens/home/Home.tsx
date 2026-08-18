@@ -1,31 +1,77 @@
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import React from 'react';
-import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import AppText from '../../components/ui/text/AppText';
 import PerfectImage from '../../components/ui/image/PerfectImage';
 import { IMAGES } from '../../config/image';
+import CustomHeader from '../../components/home/CustomHeader';
+import { COLORS } from '../../config/colors';
+import { heightPixel, widthPixel } from '../../config/responsive';
 
 const Home = () => {
   return (
-    <SafeScreen>
-      <View style={styles.container}>
+    <View style={styles.homeContainer}>
+      <CustomHeader />
+
+      <View style={styles.contentContainer}>
         <AppText textContent="Home" variant="title" />
-        <PerfectImage
-          variant="headerLogo"
-          imagePath={IMAGES.img_profile}
-          fallBackImage={IMAGES.img_apple}
-          showLoader={true}
-        />
+        <ScrollView horizontal scrollToOverflowEnabled>
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+          <PerfectImage
+            variant="headerLogo"
+            imagePath={IMAGES.img_profile}
+            fallBackImage={IMAGES.img_apple}
+            showLoader={true}
+          />
+        </ScrollView>
       </View>
-    </SafeScreen>
+    </View>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
+  homeContainer: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: COLORS.app_FFFFFF,
+  },
+  contentContainer: {
+    paddingVertical: heightPixel(12),
+    paddingHorizontal: widthPixel(12),
   },
 });

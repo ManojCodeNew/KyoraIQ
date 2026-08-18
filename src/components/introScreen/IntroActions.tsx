@@ -3,6 +3,8 @@ import AppText from '../ui/text/AppText';
 import AppButton from '../ui/button/AppButton';
 import { COLORS } from '../../config/colors';
 import { fontPixel, widthPixel } from '../../config/responsive';
+import AppImage from '../ui/image/AppImage';
+import { IMAGES } from '../../config/image';
 
 interface IntroActionsProps {
   onNext: () => void;
@@ -40,11 +42,14 @@ const IntroActions = ({
           variant="btnText"
           textStyle={styles.nextBtnTextStyle}
         />
+
         {isLastPage && (
-          <AppText
-            textContent={'→'}
-            variant="body"
-            textStyle={styles.rightArrow}
+          <AppImage
+            variant="arrow"
+            imagePath={IMAGES.img_right_arrow}
+            showLoader={false}
+            imageStyle={styles.rightArrow}
+            tintColor={COLORS.app_FFFFFF}
           />
         )}
       </AppButton>
@@ -78,9 +83,11 @@ const styles = StyleSheet.create({
     fontSize: fontPixel(20),
     position: 'absolute',
     right: widthPixel(12),
-    color: COLORS.app_FFFFFF,
   },
   nextBtnTextStyle: {
     color: COLORS.app_FFFFFF,
+  },
+  rightArrowButton: {
+    tintColor: COLORS.app_FFFFFF,
   },
 });

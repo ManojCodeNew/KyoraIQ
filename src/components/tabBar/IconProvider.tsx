@@ -17,17 +17,19 @@ const IconProvider = ({
       {icon_label === 'home' && (
         <AppImage
           imagePath={IMAGES.tabBar.img_home}
+          showLoader={false}
           variant="default"
-          tintColor={focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC}
-          // imageStyle={{
-          //   tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
-          // }}
+          // tintColor={focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC}
+          imageStyle={{
+            tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
+          }}
         />
       )}
       {icon_label === 'chat' && (
         <AppImage
           imagePath={IMAGES.tabBar.img_chat}
           variant="default"
+          showLoader={false}
           imageStyle={{
             tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
           }}
@@ -36,6 +38,7 @@ const IconProvider = ({
       {icon_label === 'history' && (
         <AppImage
           imagePath={IMAGES.tabBar.img_history}
+          showLoader={false}
           variant="default"
           imageStyle={{
             tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
@@ -45,6 +48,7 @@ const IconProvider = ({
       {icon_label === 'profile' && (
         <AppImage
           imagePath={IMAGES.tabBar.img_profile}
+          showLoader={false}
           variant="default"
           imageStyle={{
             tintColor: focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC,
