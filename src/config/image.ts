@@ -13,6 +13,9 @@ import HISTORY from '../assets/images/linear_history.png';
 import PROFILE from '../assets/images/linear_profile.png';
 import RIGHT_ARROW from '../assets/images/ic_right_arrow.png';
 import CHECKED from '../assets/images/ic_checked.png';
+import ACTIVE_NOTIFICATION from '../assets/images/ic_notification.png';
+import PRO from '../assets/images/ic_pro.png';
+import SEARCH from '../assets/images/ic_search.png';
 
 export const IMAGES = {
   img_intro1: INTRO1,
@@ -26,6 +29,9 @@ export const IMAGES = {
   img_fallBackProfile: PROFILE_SETUP,
   img_right_arrow: RIGHT_ARROW,
   img_checked: CHECKED,
+  img_activeNotification: ACTIVE_NOTIFICATION,
+  img_pro: PRO,
+  img_search: SEARCH,
   tabBar: {
     img_home: HOME,
     img_chat: CHAT,

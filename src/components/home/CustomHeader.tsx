@@ -2,11 +2,14 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import AppText from '../ui/text/AppText';
 import LinearGradient from 'react-native-linear-gradient';
-import { heightPixel, widthPixel } from '../../config/responsive';
+import { fontPixel, heightPixel, widthPixel } from '../../config/responsive';
 import AppImage from '../ui/image/AppImage';
 import { IMAGES } from '../../config/image';
 import FastImage from '@d11/react-native-fast-image';
 import { AuthState } from '../../types/auth.types';
+import AppButton from '../ui/button/AppButton';
+import { COLORS } from '../../config/colors';
+import AppSearchBar from './AppSearchBar';
 
 interface CustomHeaderParams {
   authState: AuthState;
@@ -35,15 +38,34 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
               }
               variant="greetingProfile"
             />
-            <AppText textContent={authState.user.profile.name} />
+            <AppText
+              textContent={authState.user.profile.name}
+              variant="title"
+              textStyle={styles.profileName}
+            />
           </View>
           <View style={styles.profileActionContainer}>
-            <AppText textContent="Profile" />
+            <AppButton onClick={() => ''} variant="upgradeButton">
+              <LinearGradient
+                colors={['#5F79EA', '#17E9D9']}
+                start={{ x: 0, y: 1 }}
+                end={{ x: 0, y: 0 }}
+                style={[StyleSheet.absoluteFill, styles.proButton]}
+              >
+                <AppImage imagePath={IMAGES.img_pro} variant="smallIcon" />
+                <AppText
+                  textContent="PRO"
+                  variant="title"
+                  textStyle={styles.proText}
+                />
+              </LinearGradient>
+            </AppButton>
+            <AppImage imagePath={IMAGES.img_activeNotification} />
           </View>
         </View>
         <View style={styles.searchRow}>
-          <View style={styles.searchContainer}>
-            <AppText textContent="Search" />
+          <View>
+            <AppSearchBar />
           </View>
           <View style={styles.helpContainer}>
             <AppText textContent="Search" />
@@ -74,11 +96,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: widthPixel(8),
   },
-  profileActionContainer: {},
+  profileName: { fontSize: fontPixel(16) },
+  profileActionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: widthPixel(8),
+  },
+  proButton: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: widthPixel(6),
+    borderRadius: widthPixel(56),
+  },
+  proText: {
+    fontSize: fontPixel(12),
+    color: COLORS.app_FFFFFF,
+  },
   searchRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  searchContainer: {},
+
   helpContainer: {},
 });

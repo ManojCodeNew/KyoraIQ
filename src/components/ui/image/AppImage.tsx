@@ -15,7 +15,8 @@ type AppImageVariantType =
   | 'headerLogo'
   | 'arrow'
   | 'profileSetter'
-  | 'greetingProfile';
+  | 'greetingProfile'
+  | 'smallIcon';
 
 export type AppImageSource = number | Source;
 
@@ -103,6 +104,10 @@ const styles = StyleSheet.create({
     width: widthPixel(36),
     height: heightPixel(36),
     borderRadius: heightPixel(36),
+  },
+  smallIcon: {
+    width: widthPixel(18),
+    height: heightPixel(18),
   },
   clip: {
     overflow: 'hidden',
