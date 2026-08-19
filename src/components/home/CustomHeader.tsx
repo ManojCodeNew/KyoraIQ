@@ -68,7 +68,8 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
             <AppSearchBar />
           </View>
           <View style={styles.helpContainer}>
-            <AppText textContent="Search" />
+            <AppImage imagePath={IMAGES.img_help} variant="mediumIcon" />
+            <AppText textContent="HELP" textStyle={styles.helpText} />
           </View>
         </View>
       </View>
@@ -119,5 +120,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  helpContainer: {},
+  helpContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  helpText: {
+    textAlign: 'center',
+  },
 });

@@ -16,6 +16,7 @@ import CHECKED from '../assets/images/ic_checked.png';
 import ACTIVE_NOTIFICATION from '../assets/images/ic_notification.png';
 import PRO from '../assets/images/ic_pro.png';
 import SEARCH from '../assets/images/ic_search.png';
+import HELP from '../assets/images/ic_help.png';
 
 export const IMAGES = {
   img_intro1: INTRO1,
@@ -32,6 +33,7 @@ export const IMAGES = {
   img_activeNotification: ACTIVE_NOTIFICATION,
   img_pro: PRO,
   img_search: SEARCH,
+  img_help: HELP,
   tabBar: {
     img_home: HOME,
     img_chat: CHAT,

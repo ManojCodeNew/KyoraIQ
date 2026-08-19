@@ -16,7 +16,8 @@ type AppImageVariantType =
   | 'arrow'
   | 'profileSetter'
   | 'greetingProfile'
-  | 'smallIcon';
+  | 'smallIcon'
+  | 'mediumIcon';
 
 export type AppImageSource = number | Source;
 
@@ -108,6 +109,11 @@ const styles = StyleSheet.create({
   smallIcon: {
     width: widthPixel(18),
     height: heightPixel(18),
+  },
+  mediumIcon: {
+    width: widthPixel(32),
+    height: heightPixel(32),
+    borderRadius: heightPixel(8),
   },
   clip: {
     overflow: 'hidden',
