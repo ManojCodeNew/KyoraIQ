@@ -9,6 +9,7 @@ import { heightPixel, widthPixel } from '../../config/responsive';
 // import { useTranslation } from 'react-i18next';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import GlobalSectionHeader from '../../components/home/GlobalSectionHeader';
+import GlobalCard from '../../components/ui/globalCard/GlobalCard';
 
 const Home = () => {
   // const { t } = useTranslation();
@@ -29,6 +30,12 @@ const Home = () => {
           onViewAllPress={() => ''}
           viewAllText="View all"
         />
+        <GlobalCard>
+          <AppText textContent="hello" />
+          <AppText textContent="hello" />
+          <AppText textContent="hello" />
+        </GlobalCard>
+
         <ScrollView horizontal scrollToOverflowEnabled>
           <PerfectImage
             variant="headerLogo"
