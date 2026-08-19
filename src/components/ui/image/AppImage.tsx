@@ -51,8 +51,8 @@ const AppImage = ({
   return (
     <View style={[styles[variant], imageStyle, styles.clip]}>
       <FastImage
-        source={resolvedImage}
-        resizeMode={FastImage.resizeMode.contain}
+        source={resolvedImage} // Fast Image prop
+        resizeMode={FastImage.resizeMode.contain} // Fast Image prop
         style={[StyleSheet.absoluteFill, styles[variant], imageStyle]}
         onError={() => handleError()}
         onLoadEnd={() => setIsLoading(false)}

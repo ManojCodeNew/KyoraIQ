@@ -6,14 +6,23 @@ import { IMAGES } from '../../config/image';
 import CustomHeader from '../../components/home/CustomHeader';
 import { COLORS } from '../../config/colors';
 import { heightPixel, widthPixel } from '../../config/responsive';
+import { useTranslation } from 'react-i18next';
+import { useAuthContext } from '../../context/AuthContextProvider';
 
 const Home = () => {
+  const { t } = useTranslation();
+  const { authState } = useAuthContext();
   return (
     <View style={styles.homeContainer}>
       <CustomHeader />
 
       <View style={styles.contentContainer}>
-        <AppText textContent="Home" variant="title" />
+        <AppText
+          textContent={t('greeting.welcome', {
+            username: authState.user.profile.name,
+          })}
+          variant="title"
+        />
         <ScrollView horizontal scrollToOverflowEnabled>
           <PerfectImage
             variant="headerLogo"
