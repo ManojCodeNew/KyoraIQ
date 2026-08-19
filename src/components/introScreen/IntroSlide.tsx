@@ -19,7 +19,7 @@ const IntroSlide = ({ item }: { item: IntroSlideType }) => {
         <AppImage
           imagePath={item.imagePath}
           showLoader={true}
-          variant="thumbnail"
+          variant="introThumbnail"
         />
       </View>
       <View style={styles.textContainer}>

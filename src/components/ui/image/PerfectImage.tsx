@@ -65,7 +65,7 @@ const PerfectImage = ({
           console.log('🟡 EVENT: onLoadStart');
           setIsLoading(true);
         }}
-        onLoad={() => {
+        onLoadEnd={() => {
           console.log('🟢 EVENT: onLoad');
           setIsLoading(false);
         }}

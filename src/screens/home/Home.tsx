@@ -14,7 +14,7 @@ const Home = () => {
   const { authState } = useAuthContext();
   return (
     <View style={styles.homeContainer}>
-      <CustomHeader />
+      <CustomHeader authState={authState} />
 
       <View style={styles.contentContainer}>
         <AppText
@@ -26,43 +26,7 @@ const Home = () => {
         <ScrollView horizontal scrollToOverflowEnabled>
           <PerfectImage
             variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
-            fallBackImage={IMAGES.img_apple}
-            showLoader={true}
-          />
-          <PerfectImage
-            variant="headerLogo"
-            imagePath={IMAGES.img_profile}
+            imagePath={IMAGES.img_fallBackProfile}
             fallBackImage={IMAGES.img_apple}
             showLoader={true}
           />

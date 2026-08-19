@@ -10,11 +10,12 @@ import { COLORS } from '../../../config/colors';
 
 type AppImageVariantType =
   | 'default'
-  | 'rounded'
-  | 'thumbnail'
+  | 'socialMedia'
+  | 'introThumbnail'
   | 'headerLogo'
   | 'arrow'
-  | 'profile_setter';
+  | 'profileSetter'
+  | 'greetingProfile';
 
 export type AppImageSource = number | Source;
 
@@ -77,11 +78,11 @@ const styles = StyleSheet.create({
     width: widthPixel(24),
     height: heightPixel(24),
   },
-  rounded: {
+  socialMedia: {
     width: widthPixel(30),
     height: heightPixel(30),
   },
-  thumbnail: {
+  introThumbnail: {
     width: widthPixel(375),
     height: heightPixel(505),
   },
@@ -93,10 +94,15 @@ const styles = StyleSheet.create({
     width: widthPixel(24),
     height: heightPixel(20),
   },
-  profile_setter: {
+  profileSetter: {
     width: widthPixel(100),
     height: heightPixel(100),
     borderRadius: heightPixel(100),
+  },
+  greetingProfile: {
+    width: widthPixel(36),
+    height: heightPixel(36),
+    borderRadius: heightPixel(36),
   },
   clip: {
     overflow: 'hidden',

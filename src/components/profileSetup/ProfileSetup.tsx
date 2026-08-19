@@ -28,10 +28,10 @@ const ProfileSetup = ({
           imagePath={
             authState.user.profile.profileImagePath?.trim()
               ? { uri: authState.user.profile.profileImagePath }
-              : IMAGES.img_profile
+              : IMAGES.img_fallBackProfile
           }
           showLoader={true}
-          variant="profile_setter"
+          variant="profileSetter"
         />
 
         <AppText

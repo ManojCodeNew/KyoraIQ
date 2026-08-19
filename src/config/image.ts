@@ -23,7 +23,7 @@ export const IMAGES = {
   img_apple: APPLE_LOGO,
   img_google: GOOGLE_LOGO,
   img_back_arrow: BACK_ARROW,
-  img_profile: PROFILE_SETUP,
+  img_fallBackProfile: PROFILE_SETUP,
   img_right_arrow: RIGHT_ARROW,
   img_checked: CHECKED,
   tabBar: {
