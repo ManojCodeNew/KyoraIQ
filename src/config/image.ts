@@ -17,6 +17,7 @@ import ACTIVE_NOTIFICATION from '../assets/images/ic_notification.png';
 import PRO from '../assets/images/ic_pro.png';
 import SEARCH from '../assets/images/ic_search.png';
 import HELP from '../assets/images/ic_help.png';
+import CHEVRON_RIGHT from '../assets/images/ic_chevronRight.png';
 
 export const IMAGES = {
   img_intro1: INTRO1,
@@ -34,6 +35,7 @@ export const IMAGES = {
   img_pro: PRO,
   img_search: SEARCH,
   img_help: HELP,
+  img_chevronRight: CHEVRON_RIGHT,
   tabBar: {
     img_home: HOME,
     img_chat: CHAT,

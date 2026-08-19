@@ -6,22 +6,28 @@ import { IMAGES } from '../../config/image';
 import CustomHeader from '../../components/home/CustomHeader';
 import { COLORS } from '../../config/colors';
 import { heightPixel, widthPixel } from '../../config/responsive';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { useAuthContext } from '../../context/AuthContextProvider';
+import GlobalSectionHeader from '../../components/home/GlobalSectionHeader';
 
 const Home = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const { authState } = useAuthContext();
   return (
     <View style={styles.homeContainer}>
       <CustomHeader authState={authState} />
 
       <View style={styles.contentContainer}>
-        <AppText
+        {/* <AppText
           textContent={t('greeting.welcome', {
             username: authState.user.profile.name,
           })}
           variant="title"
+        /> */}
+        <GlobalSectionHeader
+          title="Booking History"
+          onViewAllPress={() => ''}
+          viewAllText="View all"
         />
         <ScrollView horizontal scrollToOverflowEnabled>
           <PerfectImage

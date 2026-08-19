@@ -64,5 +64,4 @@ const styles = StyleSheet.create({
     fontFamily: fontFamilies.InterTight.medium,
     textAlign: 'center',
   },
-  
 });
