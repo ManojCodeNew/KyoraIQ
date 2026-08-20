@@ -40,7 +40,6 @@ const Home = () => {
         <AppText textContent="hello" />
         <AppText textContent="hello" />
       </GlobalCard>
-      // </View>
     );
   };
   return (
@@ -67,6 +66,7 @@ const Home = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             style={styles.bookingHistoryFlatList}
+            contentContainerStyle={styles.historyCardsContainer}
             // lis
           />
         </View>

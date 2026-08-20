@@ -1,4 +1,10 @@
-import { ActivityIndicator, StyleProp, StyleSheet, View } from 'react-native';
+import {
+  ActivityIndicator,
+  StyleProp,
+  StyleSheet,
+  View,
+  // ImageSourcePropType,
+} from 'react-native';
 import React, { useState } from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import FastImage, {
@@ -19,6 +25,7 @@ type AppImageVariantType =
   | 'smallIcon'
   | 'mediumIcon';
 
+// export type AppImageSource = ImageSourcePropType | FastImageProps['source']; // source?: Source | ImageRequireSource;
 export type AppImageSource = number | Source;
 
 interface AppImagePropsType
