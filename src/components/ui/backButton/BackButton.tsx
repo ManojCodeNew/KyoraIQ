@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 import React from 'react';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import AppImage from '../image/AppImage';
-import { IMAGES } from '../../../config/image';
 import AppButton from '../button/AppButton';
 import { isIOS } from '../../../utils/platformUtil';
 import { COLORS } from '../../../config/colors';
+import { ICONS } from '../../../config/icon';
 
 interface BackButtonProps {
   onBack: () => void;
@@ -24,7 +24,7 @@ const BackButton = ({
     >
       <AppImage
         variant="arrow"
-        imagePath={IMAGES.img_back_arrow}
+        imagePath={ICONS.ic_backArrow}
         showLoader={false}
         tintColor={buttonColor}
       />

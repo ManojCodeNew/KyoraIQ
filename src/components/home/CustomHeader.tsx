@@ -10,6 +10,7 @@ import { AuthState } from '../../types/auth.types';
 import AppButton from '../ui/button/AppButton';
 import { COLORS } from '../../config/colors';
 import AppSearchBar from './AppSearchBar';
+import { ICONS } from '../../config/icon';
 
 interface CustomHeaderParams {
   authState: AuthState;
@@ -34,7 +35,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
                       priority: FastImage.priority.high,
                       cache: FastImage.cacheControl.web,
                     }
-                  : IMAGES.img_fallBackProfile
+                  : IMAGES.img_defaultProfile
               }
               variant="greetingProfile"
             />
@@ -52,7 +53,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
                 end={{ x: 0, y: 0 }}
                 style={[StyleSheet.absoluteFill, styles.proButton]}
               >
-                <AppImage imagePath={IMAGES.img_pro} variant="smallIcon" />
+                <AppImage imagePath={ICONS.ic_proBadge} variant="smallIcon" />
                 <AppText
                   textContent="PRO"
                   variant="title"
@@ -60,7 +61,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
                 />
               </LinearGradient>
             </AppButton>
-            <AppImage imagePath={IMAGES.img_activeNotification} />
+            <AppImage imagePath={ICONS.ic_activeNotification} />
           </View>
         </View>
         <View style={styles.searchRow}>
@@ -68,7 +69,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
             <AppSearchBar />
           </View>
           <View style={styles.helpContainer}>
-            <AppImage imagePath={IMAGES.img_help} variant="mediumIcon" />
+            <AppImage imagePath={ICONS.ic_help} variant="mediumIcon" />
             <AppText textContent="HELP" textStyle={styles.helpText} />
           </View>
         </View>

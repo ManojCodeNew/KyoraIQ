@@ -4,12 +4,12 @@ import { heightPixel, widthPixel } from '../../config/responsive';
 import { COLORS } from '../../config/colors';
 import AppImage from '../ui/image/AppImage';
 import AppTextInput from '../ui/textInput/AppTextInput';
-import { IMAGES } from '../../config/image';
+import { ICONS } from '../../config/icon';
 
 const AppSearchBar = () => {
   return (
     <View style={styles.searchContainer}>
-      <AppImage imagePath={IMAGES.img_search} />
+      <AppImage imagePath={ICONS.ic_search} />
       <AppTextInput
         placeholderText="Search “Cloud Security”"
         textInputStyle={styles.searchBar}

@@ -4,7 +4,7 @@ import AppButton from '../button/AppButton';
 import { heightPixel, widthPixel } from '../../../config/responsive';
 import { COLORS } from '../../../config/colors';
 import AppImage from '../image/AppImage';
-import { IMAGES } from '../../../config/image';
+import { ICONS } from '../../../config/icon';
 
 type AppCheckBoxVariant = 'circle' | 'square';
 
@@ -35,7 +35,7 @@ const AppCheckBox = ({
     >
       {checked && variant === 'square' && (
         <AppImage
-          imagePath={IMAGES.img_checked}
+          imagePath={ICONS.ic_checked}
           variant="arrow"
           imageStyle={styles.checkIconStyle}
         />

@@ -19,7 +19,7 @@ const Header = ({
         <BackButton onBack={onBack} buttonColor={COLORS.app_FFFFFF} />
       )}
       <AppImage
-        imagePath={IMAGES.img_logo}
+        imagePath={IMAGES.img_appLogo}
         showLoader={false}
         variant="headerLogo"
       />

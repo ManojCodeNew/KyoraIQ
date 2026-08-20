@@ -3,8 +3,8 @@ import React from 'react';
 import AppText from '../ui/text/AppText';
 import { COLORS } from '../../config/colors';
 import AppImage from '../ui/image/AppImage';
-import { IMAGES } from '../../config/image';
 import { heightPixel, widthPixel } from '../../config/responsive';
+import { ICONS } from '../../config/icon';
 
 interface HeadingParams {
   title: string;
@@ -32,7 +32,7 @@ const GlobalSectionHeader = ({
             variant="body"
           />
           <AppImage
-            imagePath={IMAGES.img_chevronRight}
+            imagePath={ICONS.ic_chevronRight}
             variant="smallIcon"
             imageStyle={styles.chevronRightIcon}
           />

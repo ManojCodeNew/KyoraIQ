@@ -4,7 +4,7 @@ import AppButton from '../ui/button/AppButton';
 import { COLORS } from '../../config/colors';
 import { fontPixel, widthPixel } from '../../config/responsive';
 import AppImage from '../ui/image/AppImage';
-import { IMAGES } from '../../config/image';
+import { ICONS } from '../../config/icon';
 
 interface IntroActionsProps {
   onNext: () => void;
@@ -46,7 +46,7 @@ const IntroActions = ({
         {isLastPage && (
           <AppImage
             variant="arrow"
-            imagePath={IMAGES.img_right_arrow}
+            imagePath={ICONS.ic_rightArrow}
             showLoader={false}
             imageStyle={styles.rightArrow}
             tintColor={COLORS.app_FFFFFF}

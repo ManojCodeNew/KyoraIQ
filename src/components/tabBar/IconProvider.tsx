@@ -1,6 +1,6 @@
 import React from 'react';
 import AppImage from '../ui/image/AppImage';
-import { IMAGES } from '../../config/image';
+import { ICONS } from '../../config/icon';
 
 export type IconLabel = 'home' | 'chat' | 'history' | 'profile';
 
@@ -15,7 +15,7 @@ const IconProvider = ({
     <>
       {icon_label === 'home' && (
         <AppImage
-          imagePath={IMAGES.tabBar.img_home}
+          imagePath={ICONS.tabBar.ic_home}
           showLoader={false}
           variant="default"
           // tintColor={focused ? COLORS.app_FFFFFF : COLORS.app_CCCCCC}
@@ -26,7 +26,7 @@ const IconProvider = ({
       )}
       {icon_label === 'chat' && (
         <AppImage
-          imagePath={IMAGES.tabBar.img_chat}
+          imagePath={ICONS.tabBar.ic_chat}
           variant="default"
           showLoader={false}
           // imageStyle={{
@@ -36,7 +36,7 @@ const IconProvider = ({
       )}
       {icon_label === 'history' && (
         <AppImage
-          imagePath={IMAGES.tabBar.img_history}
+          imagePath={ICONS.tabBar.ic_history}
           showLoader={false}
           variant="default"
           // imageStyle={{
@@ -46,7 +46,7 @@ const IconProvider = ({
       )}
       {icon_label === 'profile' && (
         <AppImage
-          imagePath={IMAGES.tabBar.img_profile}
+          imagePath={ICONS.tabBar.ic_profile}
           showLoader={false}
           variant="default"
           // imageStyle={{
