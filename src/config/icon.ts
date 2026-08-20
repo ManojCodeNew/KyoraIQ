@@ -7,6 +7,9 @@ export const ICONS = {
   ic_search: require(`../assets/icons/ic_search.png`),
   ic_help: require(`../assets/icons/ic_help.png`),
   ic_chevronRight: require(`../assets/icons/ic_chevronRight.png`),
+  ic_message: require('../assets/icons/ic_message.png'),
+  ic_bag: require('../assets/icons/ic_bag.png'),
+  ic_money: require('../assets/icons/ic_money.png'),
   tabBar: {
     ic_home: require(`../assets/icons/ic_linearHome.png`),
     ic_chat: require(`../assets/icons/ic_linearChat.png`),

@@ -37,7 +37,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
                     }
                   : IMAGES.img_defaultProfile
               }
-              variant="greetingProfile"
+              variant="smallProfile"
             />
             <AppText
               textContent={authState.user.profile.name}

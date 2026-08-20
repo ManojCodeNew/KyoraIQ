@@ -73,7 +73,7 @@ export const bookingHistory = [
     },
     amount: {
       value: 2500,
-      currency: 'USD',
+      currency: '$',
     },
     status: 'completed',
   },
@@ -82,7 +82,7 @@ export const bookingHistory = [
     provider: {
       id: 'PROVIDER_002',
       name: 'James Smith',
-      avatar: 'https://i.pravatar.cc/150?img=2',
+      avatar: 'https://i.pravatar.cc/150?img=4',
     },
     date: '2025-08-12',
     service: {
@@ -91,8 +91,33 @@ export const bookingHistory = [
     },
     amount: {
       value: 1750,
-      currency: 'USD',
+      currency: '$',
     },
     status: 'completed',
+  },
+];
+
+export const services = [
+  {
+    id: 'SERVICE_001',
+    name: 'Cloud Security',
+    avatar: '../assets/icons/ic_cloudSecurity.png',
+    amount: {
+      currency: '$',
+      value: 80,
+      time: 'hr',
+    },
+    totalBookings: 500,
+  },
+  {
+    id: 'SERVICE_002',
+    name: 'Cybersecurity Program Development',
+    avatar: '../assets/icons/ic_cyberSecurity.png',
+    amount: {
+      currency: '$',
+      value: 60,
+      time: 'hr',
+    },
+    totalBookings: 250,
   },
 ];

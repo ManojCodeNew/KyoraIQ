@@ -49,7 +49,5 @@ const styles = StyleSheet.create({
   },
   fullWidth: {
     width: '100%',
-    // alignSelf: 'stretch',
-    // flex: undefined,
   },
 });

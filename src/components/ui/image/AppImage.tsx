@@ -21,7 +21,7 @@ type AppImageVariantType =
   | 'headerLogo'
   | 'arrow'
   | 'profileSetter'
-  | 'greetingProfile'
+  | 'smallProfile'
   | 'smallIcon'
   | 'mediumIcon';
 
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     height: heightPixel(100),
     borderRadius: heightPixel(100),
   },
-  greetingProfile: {
+  smallProfile: {
     width: widthPixel(36),
     height: heightPixel(36),
     borderRadius: heightPixel(36),
