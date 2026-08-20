@@ -1,5 +1,49 @@
 import { RoleType } from '../screens/profileSetup/ChooseRoleScreen';
+import { ICONS } from './icon';
 import { IMAGES } from './image';
+
+export interface BookingHistory {
+  id: string;
+  provider: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
+  date: string;
+  service: {
+    id: string;
+    name: string;
+  };
+  amount: {
+    value: number;
+    currency: string;
+  };
+  status: string;
+}
+
+export type IconKey = keyof typeof ICONS;
+
+export interface ServiceAmount {
+  currency: string;
+  value: number;
+  time: string;
+}
+
+export interface Services {
+  id: string;
+  name: string;
+  avatar: IconKey;
+  amount: ServiceAmount;
+  totalBookings: number;
+}
+
+export interface WorkshopDetails {
+  id: string;
+  title: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+}
 
 export const INTRO_DATA = [
   {
@@ -58,7 +102,7 @@ export const USER_DATA = [
   },
 ];
 
-export const bookingHistory = [
+export const bookingHistory: BookingHistory[] = [
   {
     id: 'CMX2031',
     provider: {
@@ -97,11 +141,11 @@ export const bookingHistory = [
   },
 ];
 
-export const services = [
+export const services: Services[] = [
   {
     id: 'SERVICE_001',
     name: 'Cloud Security',
-    avatar: '../assets/icons/ic_cloudSecurity.png',
+    avatar: 'ic_cloudSecurity',
     amount: {
       currency: '$',
       value: 80,
@@ -112,12 +156,29 @@ export const services = [
   {
     id: 'SERVICE_002',
     name: 'Cybersecurity Program Development',
-    avatar: '../assets/icons/ic_cyberSecurity.png',
+    avatar: 'ic_cyberSecurity',
     amount: {
       currency: '$',
       value: 60,
       time: 'hr',
     },
     totalBookings: 250,
+  },
+];
+
+export const workshops: WorkshopDetails[] = [
+  {
+    id: 'WORKSHOP_01',
+    title: 'Career Progression',
+    date: '15-10-2025',
+    startTime: '11:30 AM',
+    endTime: '1:30 PM',
+  },
+  {
+    id: 'WORKSHOP_02',
+    title: 'Cloud Misconfiguration Exploits',
+    date: '25-10-2025',
+    startTime: '11:30 AM',
+    endTime: '1:30 PM',
   },
 ];
