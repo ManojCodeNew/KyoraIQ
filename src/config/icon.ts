@@ -13,6 +13,7 @@ export const ICONS = {
   ic_tick: require('../assets/icons/ic_tick.png'),
   ic_cloudSecurity: require('../assets/icons/ic_cloudSecurity.png'),
   ic_cyberSecurity: require('../assets/icons/ic_cyberSecurity.png'),
+  ic_time: require('../assets/icons/ic_time.png'),
   tabBar: {
     ic_home: require(`../assets/icons/ic_linearHome.png`),
     ic_chat: require(`../assets/icons/ic_linearChat.png`),

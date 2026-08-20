@@ -3,6 +3,7 @@ import React from 'react';
 import AppButton from '../ui/button/AppButton';
 import AppText from '../ui/text/AppText';
 import { COLORS } from '../../config/colors';
+import { heightPixel } from '../../config/responsive';
 
 const ContinueButton = ({ onContinue }: { onContinue: () => void }) => {
   return (
@@ -24,6 +25,7 @@ export default ContinueButton;
 
 const styles = StyleSheet.create({
   continueButton: {
+    height: heightPixel(48),
     backgroundColor: COLORS.app_111D5F,
   },
   continueButtonText: {

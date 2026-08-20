@@ -40,15 +40,18 @@ export default AppButton;
 
 const styles = StyleSheet.create({
   primary: {
-    paddingVertical: heightPixel(14),
-    paddingHorizontal: widthPixel(60),
+    paddingVertical: heightPixel(12),
+    paddingHorizontal: widthPixel(12),
+    height: widthPixel(48),
     backgroundColor: COLORS.app_CCCCCC,
     borderRadius: widthPixel(12),
   },
   secondary: {
-    paddingVertical: heightPixel(20),
-    paddingHorizontal: widthPixel(20),
-    backgroundColor: COLORS.app_CCCCCC,
+    borderRadius: widthPixel(8),
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: widthPixel(36),
+    backgroundColor: COLORS.app_111D5F,
   },
   small: {
     width: widthPixel(30),
