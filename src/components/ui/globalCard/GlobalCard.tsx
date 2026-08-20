@@ -13,16 +13,16 @@ interface GlobalCardParams {
   children: React.ReactNode;
   style?: StyleProp<ViewStyle>;
   onCardPress?: () => void;
-  fullWidth: boolean;
+  fullWidth?: boolean;
 }
 
 const GlobalCard = ({
   children,
   style,
-  fullWidth = true,
+  fullWidth = false,
   onCardPress,
 }: GlobalCardParams) => {
-  const cardStyle = [fullWidth && styles.fullWidth, styles.base, style];
+  const cardStyle = [styles.base, fullWidth && styles.fullWidth, style];
 
   if (onCardPress) {
     return (
@@ -38,8 +38,7 @@ export default GlobalCard;
 
 const styles = StyleSheet.create({
   base: {
-    // width: widthPixel(240),
-    // height: heightPixel(170),
+    width: widthPixel(240),
     borderRadius: widthPixel(12),
     borderWidth: widthPixel(1),
     borderColor: COLORS.app_E8E8EA,
@@ -49,7 +48,8 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   fullWidth: {
-    alignSelf: 'stretch',
-    flex: undefined,
+    width: '100%',
+    // alignSelf: 'stretch',
+    // flex: undefined,
   },
 });

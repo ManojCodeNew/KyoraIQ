@@ -57,3 +57,42 @@ export const USER_DATA = [
     email: 'manoj@gmail.com',
   },
 ];
+
+export const bookingHistory = [
+  {
+    id: 'CMX2031',
+    provider: {
+      id: 'PROVIDER_001',
+      name: 'Kendall Musk',
+      avatar: 'https://i.pravatar.cc/150?img=2',
+    },
+    date: '2025-08-15',
+    service: {
+      id: 'SERVICE_001',
+      name: 'Cloud Security',
+    },
+    amount: {
+      value: 2500,
+      currency: 'USD',
+    },
+    status: 'completed',
+  },
+  {
+    id: 'CMX2032',
+    provider: {
+      id: 'PROVIDER_002',
+      name: 'James Smith',
+      avatar: 'https://i.pravatar.cc/150?img=2',
+    },
+    date: '2025-08-12',
+    service: {
+      id: 'SERVICE_002',
+      name: 'Network Security',
+    },
+    amount: {
+      value: 1750,
+      currency: 'USD',
+    },
+    status: 'completed',
+  },
+];
