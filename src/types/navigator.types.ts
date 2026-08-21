@@ -1,3 +1,5 @@
+import { NavigatorScreenParams } from '@react-navigation/native';
+
 export type RootNativeStackParamList = {
   Initializer: undefined;
   Intro: undefined;
@@ -5,12 +7,20 @@ export type RootNativeStackParamList = {
   Register: undefined;
   RoleSetup: undefined;
   ProfileDetails: undefined;
-  tabBar: undefined;
+  TabBar: NavigatorScreenParams<RootBottomTabParamList>;
 };
 
 export type RootBottomTabParamList = {
-  Home: undefined;
+  HomeStack: NavigatorScreenParams<HomeStackParamList>;
   History: undefined;
   Chat: undefined;
   Profile: undefined;
+};
+
+export type HomeStackParamList = {
+  Home: undefined;
+  Workshop: undefined;
+  Service: { serviceID: string };
+  ConsultantProfile: undefined;
+  Search: undefined;
 };

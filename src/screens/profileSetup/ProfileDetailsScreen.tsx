@@ -33,7 +33,7 @@ const ProfileDetailsScreen = ({
   const handleContinue = async () => {
     const profileSetupStatus = await handleProfileName();
     if (profileSetupStatus) {
-      navigation.reset({ index: 0, routes: [{ name: 'tabBar' }] });
+      navigation.reset({ index: 0, routes: [{ name: 'TabBar' }] });
     }
   };
   return (

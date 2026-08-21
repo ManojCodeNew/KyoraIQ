@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { RootBottomTabParamList } from '../types/navigator.types';
-import Home from '../screens/home/Home';
-import History from '../screens/home/History';
-import Chat from '../screens/home/Chat';
-import Profile from '../screens/home/Profile';
+import History from '../screens/bottomTab/History';
+import Chat from '../screens/bottomTab/Chat';
+import Profile from '../screens/bottomTab/Profile';
 import { COLORS } from '../config/colors';
 import { fontPixel, heightPixel } from '../config/responsive';
 import IconProvider from '../components/tabBar/IconProvider';
 import { fontFamilies } from '../config/font';
+import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator<RootBottomTabParamList>();
 
@@ -31,11 +31,12 @@ const BottomTab = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeStack"
+        component={HomeStack}
         options={{
+          title: 'Home',
           tabBarIcon: ({ focused }) =>
-            IconProvider({ focused, icon_label: 'home' }),
+            IconProvider({ focused, icon_label: 'homeStack' }),
         }}
       />
       <Tab.Screen

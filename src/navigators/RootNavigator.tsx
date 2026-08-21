@@ -47,7 +47,7 @@ const RootNavigator = () => {
       />
 
       <Stack.Screen
-        name="tabBar"
+        name="TabBar"
         component={BottomTab}
         options={{ headerShown: false }}
       />

@@ -2,7 +2,7 @@ import React from 'react';
 import AppImage from '../ui/image/AppImage';
 import { ICONS } from '../../config/icon';
 
-export type IconLabel = 'home' | 'chat' | 'history' | 'profile';
+export type IconLabel = 'homeStack' | 'chat' | 'history' | 'profile';
 
 const IconProvider = ({
   // focused,
@@ -13,7 +13,7 @@ const IconProvider = ({
 }) => {
   return (
     <>
-      {icon_label === 'home' && (
+      {icon_label === 'homeStack' && (
         <AppImage
           imagePath={ICONS.tabBar.ic_home}
           showLoader={false}

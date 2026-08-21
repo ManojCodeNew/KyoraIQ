@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import CustomHeader from '../../components/home/CustomHeader';
 import { COLORS } from '../../config/colors';
-import { heightPixel, widthPixel } from '../../config/responsive';
+import { heightPixel } from '../../config/responsive';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import BookingHistory from '../../components/home/BookingHistory';
 import BrowseServices from '../../components/home/BrowseServices';
