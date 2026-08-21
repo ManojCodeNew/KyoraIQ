@@ -13,12 +13,15 @@ import { formatDate } from '../../utils/formatDate';
 interface RenderWorkshopItemParams {
   workshopItems: WorkshopDetails;
   fullWidth?: boolean;
+  contentSize?: 'full' | 'compact';
 }
 
 const RenderWorkshopItems = ({
   workshopItems,
   fullWidth = false,
+  contentSize = 'compact',
 }: RenderWorkshopItemParams) => {
+  const isCompact = contentSize === 'compact';
   return (
     <GlobalCard fullWidth={fullWidth} key={workshopItems.id}>
       <View style={styles.cardContainer}>
@@ -26,8 +29,10 @@ const RenderWorkshopItems = ({
           <View style={styles.profileDetailsContainer}>
             <AppText
               textContent={
-                workshopItems.title.trim().length >= 25
-                  ? `${workshopItems.title.slice(0, 25)}...`
+                isCompact
+                  ? workshopItems.title.trim().length >= 25
+                    ? `${workshopItems.title.slice(0, 25)}...`
+                    : workshopItems.title
                   : workshopItems.title
               }
               variant="btnText"

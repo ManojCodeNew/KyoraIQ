@@ -10,6 +10,8 @@ interface WorkshopParams {
 }
 
 const Workshop = ({ onViewAllPress }: WorkshopParams) => {
+  const HOME_CONTENT_LIMIT = 3;
+  const revisedContent = workshops.slice(0, HOME_CONTENT_LIMIT);
   return (
     <View style={styles.carouselSection}>
       <GlobalSectionHeader
@@ -18,7 +20,7 @@ const Workshop = ({ onViewAllPress }: WorkshopParams) => {
         viewAllText="View all"
       />
       <FlatList
-        data={workshops}
+        data={revisedContent}
         renderItem={({ item }) => <RenderWorkshopItems workshopItems={item} />}
         keyExtractor={item => item.id}
         horizontal

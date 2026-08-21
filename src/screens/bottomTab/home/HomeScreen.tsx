@@ -22,17 +22,6 @@ const HomeScreen = ({
   return (
     <View style={styles.homeContainer}>
       <CustomHeader authState={authState} />
-      {/* 
-      <ScrollView
-        contentContainerStyle={styles.contentContainer}
-        nestedScrollEnabled
-        showsVerticalScrollIndicator={false}
-      >
-        {authState.userType === 'pro' && <Workshop />}
-        <BookingHistory />
-        <BrowseServices />
-      </ScrollView> */}
-
       <BrowseServices
         listHeaderComponents={
           <View style={styles.headerSection}>

@@ -10,7 +10,11 @@ const WorkshopScreen = () => {
     <FlatList
       data={workshops}
       renderItem={({ item }) => (
-        <RenderWorkshopItems workshopItems={item} fullWidth={true} />
+        <RenderWorkshopItems
+          workshopItems={item}
+          fullWidth={true}
+          contentSize="full"
+        />
       )}
       keyExtractor={item => item.id}
       showsHorizontalScrollIndicator={false}
