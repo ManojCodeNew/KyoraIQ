@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeStackParamList } from '../types/navigator.types';
-import Home from '../screens/bottomTab/Home';
+import HomeScreen from '../screens/bottomTab/home/HomeScreen';
+import WorkshopScreen from '../screens/bottomTab/home/WorkshopScreen';
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 const HomeStack = () => {
@@ -8,10 +9,17 @@ const HomeStack = () => {
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
-        component={Home}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen name="Workshop" component={} /> */}
+      <Stack.Screen
+        name="Workshop"
+        component={WorkshopScreen}
+        options={{
+          headerTitleAlign: 'center',
+          headerShadowVisible: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

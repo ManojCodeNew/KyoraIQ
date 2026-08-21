@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { RootBottomTabParamList } from '../types/navigator.types';
-import History from '../screens/bottomTab/History';
-import Chat from '../screens/bottomTab/Chat';
-import Profile from '../screens/bottomTab/Profile';
+import HistoryScreen from '../screens/bottomTab/HistoryScreen';
+import ChatScreen from '../screens/bottomTab/ChatScreen';
+import ProfileScreen from '../screens/bottomTab/ProfileScreen';
 import { COLORS } from '../config/colors';
 import { fontPixel, heightPixel } from '../config/responsive';
 import IconProvider from '../components/tabBar/IconProvider';
@@ -41,7 +41,7 @@ const BottomTab = () => {
       />
       <Tab.Screen
         name="History"
-        component={History}
+        component={HistoryScreen}
         options={{
           tabBarIcon: ({ focused }) =>
             IconProvider({ focused, icon_label: 'history' }),
@@ -49,7 +49,7 @@ const BottomTab = () => {
       />
       <Tab.Screen
         name="Chat"
-        component={Chat}
+        component={ChatScreen}
         options={{
           tabBarIcon: ({ focused }) =>
             IconProvider({ focused, icon_label: 'chat' }),
@@ -57,7 +57,7 @@ const BottomTab = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused }) =>
             IconProvider({ focused, icon_label: 'profile' }),

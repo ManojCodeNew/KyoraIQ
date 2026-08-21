@@ -2,8 +2,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootNativeStackParamList } from '../types/navigator.types';
 import AppInitializer from '../app/initializers/AppInitializer';
 import IntroScreen from '../screens/intro/IntroScreen';
-import Login from '../screens/auth/Login';
-import Register from '../screens/auth/Register';
+import LoginScreen from '../screens/auth/LoginScreen';
+import RegisterScreen from '../screens/auth/RegisterScreen';
 import ChooseRoleScreen from '../screens/profileSetup/ChooseRoleScreen';
 import ProfileDetailsScreen from '../screens/profileSetup/ProfileDetailsScreen';
 import BottomTab from './BottomTab';
@@ -24,7 +24,7 @@ const RootNavigator = () => {
       />
       <Stack.Screen
         name="Login"
-        component={Login}
+        component={LoginScreen}
         options={{
           headerShown: false,
           statusBarStyle: 'light',
@@ -32,7 +32,7 @@ const RootNavigator = () => {
       />
       <Stack.Screen
         name="Register"
-        component={Register}
+        component={RegisterScreen}
         options={{ headerShown: false, statusBarStyle: 'light' }}
       />
       <Stack.Screen

@@ -3,7 +3,7 @@ import React from 'react';
 import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import AppText from '../../components/ui/text/AppText';
 
-const History = () => {
+const HistoryScreen = () => {
   return (
     <SafeScreen>
       <View style={styles.container}>
@@ -13,7 +13,7 @@ const History = () => {
   );
 };
 
-export default History;
+export default HistoryScreen;
 
 const styles = StyleSheet.create({
   container: {

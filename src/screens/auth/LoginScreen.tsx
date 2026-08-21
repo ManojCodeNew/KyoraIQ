@@ -2,39 +2,38 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import Header from '../../components/auth/login/Header';
+import LoginPage from '../../components/auth/login/LoginPage';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootNativeStackParamList } from '../../types/navigator.types';
 import { widthPixel } from '../../config/responsive';
-import RegisterPage from '../../components/auth/register/RegisterPage';
 import { useAuth } from '../../hooks/useAuth';
 
-const Register = ({
+const LoginScreen = ({
   navigation,
 }: NativeStackScreenProps<RootNativeStackParamList>) => {
-  const { formData, setFormData, handleRegister: register } = useAuth();
+  const { formData, setFormData, handleLogin: authenticate } = useAuth();
 
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleSignup = async () => {
-    const registerStatus = await register();
-    if (registerStatus) {
+  const handleLogin = async () => {
+    const loginStatus = await authenticate();
+    if (loginStatus) {
       navigation.navigate('RoleSetup');
     }
   };
 
-  const navigateToLogin = () => {
-    navigation.replace('Login');
+  const navigateToSignup = () => {
+    navigation.replace('Register');
   };
-
   return (
     <View style={styles.container}>
-      <Header isGoBack={false} onBack={handleBack} />
+      <Header isGoBack={true} onBack={handleBack} />
       <SafeScreen safeAreaStyle={styles.safeAreaStyle}>
-        <RegisterPage
-          navigateToLogin={navigateToLogin}
-          onSignup={handleSignup}
+        <LoginPage
+          onLogin={handleLogin}
+          navigateToSignup={navigateToSignup}
           value={formData}
           setValue={setFormData}
         />
@@ -43,7 +42,7 @@ const Register = ({
   );
 };
 
-export default Register;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: { flex: 1 },

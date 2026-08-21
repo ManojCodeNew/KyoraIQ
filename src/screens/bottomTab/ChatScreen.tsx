@@ -3,17 +3,17 @@ import React from 'react';
 import SafeScreen from '../../components/ui/safeScreen/SafeScreen';
 import AppText from '../../components/ui/text/AppText';
 
-const Profile = () => {
+const ChatScreen = () => {
   return (
     <SafeScreen>
       <View style={styles.container}>
-        <AppText textContent="Profile" variant="title" />
+        <AppText textContent="Chat" variant="title" />
       </View>
     </SafeScreen>
   );
 };
 
-export default Profile;
+export default ChatScreen;
 
 const styles = StyleSheet.create({
   container: {

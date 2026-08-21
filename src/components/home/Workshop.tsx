@@ -5,12 +5,16 @@ import { heightPixel } from '../../config/responsive';
 import { workshops } from '../../config/data';
 import RenderWorkshopItems from './RenderWorkshopItems';
 
-const Workshop = () => {
+interface WorkshopParams {
+  onViewAllPress: () => void;
+}
+
+const Workshop = ({ onViewAllPress }: WorkshopParams) => {
   return (
     <View style={styles.carouselSection}>
       <GlobalSectionHeader
         title="Workshops"
-        onViewAllPress={() => ''}
+        onViewAllPress={onViewAllPress}
         viewAllText="View all"
       />
       <FlatList

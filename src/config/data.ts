@@ -203,4 +203,18 @@ export const workshops: WorkshopDetails[] = [
     startTime: '11:30 AM',
     endTime: '1:30 PM',
   },
+  {
+    id: 'WORKSHOP_03',
+    title: 'Mastering Endpoint Protection',
+    date: '21-08-2026',
+    startTime: '11:00 AM',
+    endTime: '1:00 PM',
+  },
+  {
+    id: 'WORKSHOP_04',
+    title: 'Introduction to Penetration Testing',
+    date: '20-08-2026',
+    startTime: '2:00 AM',
+    endTime: '4:00 PM',
+  },
 ];

@@ -9,13 +9,17 @@ import GlobalCard from '../ui/globalCard/GlobalCard';
 import AppText from '../ui/text/AppText';
 import AppButton from '../ui/button/AppButton';
 
+interface RenderWorkshopItemParams {
+  workshopItems: WorkshopDetails;
+  fullWidth?: boolean;
+}
+
 const RenderWorkshopItems = ({
   workshopItems,
-}: {
-  workshopItems: WorkshopDetails;
-}) => {
+  fullWidth = false,
+}: RenderWorkshopItemParams) => {
   return (
-    <GlobalCard fullWidth={false} key={workshopItems.id}>
+    <GlobalCard fullWidth={fullWidth} key={workshopItems.id}>
       <View style={styles.cardContainer}>
         <View style={styles.profileContainer}>
           <View style={styles.profileDetailsContainer}>
