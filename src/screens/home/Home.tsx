@@ -1,11 +1,11 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import CustomHeader from '../../components/home/CustomHeader';
 import { COLORS } from '../../config/colors';
 import { heightPixel, widthPixel } from '../../config/responsive';
 import { useAuthContext } from '../../context/AuthContextProvider';
 import BookingHistory from '../../components/home/BookingHistory';
-import BrowserServices from '../../components/home/BrowserServices';
+import BrowseServices from '../../components/home/BrowseServices';
 import Workshop from '../../components/home/Workshop';
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <View style={styles.homeContainer}>
       <CustomHeader authState={authState} />
-
+      {/* 
       <ScrollView
         contentContainerStyle={styles.contentContainer}
         nestedScrollEnabled
@@ -22,8 +22,17 @@ const Home = () => {
       >
         {authState.userType === 'pro' && <Workshop />}
         <BookingHistory />
-        <BrowserServices />
-      </ScrollView>
+        <BrowseServices />
+      </ScrollView> */}
+
+      <BrowseServices
+        listHeaderComponents={
+          <View style={styles.headerSection}>
+            {authState.userType === 'pro' && <Workshop />}
+            <BookingHistory />
+          </View>
+        }
+      />
     </View>
   );
 };
@@ -35,9 +44,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.app_FFFFFF,
   },
-  contentContainer: {
-    paddingVertical: heightPixel(12),
-    paddingHorizontal: widthPixel(12),
+
+  headerSection: {
     gap: heightPixel(24),
+    marginBottom: heightPixel(24),
   },
 });

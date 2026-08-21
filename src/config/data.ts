@@ -164,6 +164,28 @@ export const services: Services[] = [
     },
     totalBookings: 250,
   },
+  {
+    id: 'SERVICE_003',
+    name: 'Cybersecurity Program Development',
+    avatar: 'ic_cyberSecurity',
+    amount: {
+      currency: '$',
+      value: 60,
+      time: 'hr',
+    },
+    totalBookings: 250,
+  },
+  {
+    id: 'SERVICE_004',
+    name: 'Cybersecurity Program Development',
+    avatar: 'ic_cyberSecurity',
+    amount: {
+      currency: '$',
+      value: 60,
+      time: 'hr',
+    },
+    totalBookings: 250,
+  },
 ];
 
 export const workshops: WorkshopDetails[] = [
