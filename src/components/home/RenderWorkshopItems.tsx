@@ -8,6 +8,7 @@ import { WorkshopDetails } from '../../config/data';
 import GlobalCard from '../ui/globalCard/GlobalCard';
 import AppText from '../ui/text/AppText';
 import AppButton from '../ui/button/AppButton';
+import { formatDate } from '../../utils/formatDate';
 
 interface RenderWorkshopItemParams {
   workshopItems: WorkshopDetails;
@@ -37,7 +38,7 @@ const RenderWorkshopItems = ({
         <View style={styles.detailsContainer}>
           <View style={styles.serviceDisplayContainer}>
             <AppImage imagePath={ICONS.ic_bag} variant="smallIcon" />
-            <AppText textContent={workshopItems.date} />
+            <AppText textContent={formatDate(workshopItems.date.trim())} />
           </View>
           <View style={styles.amountDisplayContainer}>
             <AppImage imagePath={ICONS.ic_time} variant="smallIcon" />

@@ -1,30 +1,27 @@
-export const formatDate = (noteDate: string) => {
-    const date = new Date(noteDate)
+export const formatDate = (rawDate: string) => {
+  // target Date
+  const targetDate = new Date(rawDate);
+  targetDate.setHours(0, 0, 0, 0);
 
-    // Today
-    const today = new Date();
-    today.setHours(0, 0, 0, 0)
+  // Today
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-    //Yesturday
-    const yesturday = new Date(today)
-    yesturday.setDate(yesturday.getDate() - 1)
-    yesturday.setHours(0, 0, 0, 0)
+  //yesterday
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
 
+  if (targetDate.getTime() === today.getTime()) {
+    return 'Today';
+  }
 
-    // target noteDate
-    const targetDate = new Date(date)
-    targetDate.setHours(0, 0, 0, 0)
+  if (targetDate.getTime() === yesterday.getTime()) {
+    return 'Yesterday';
+  }
 
-    if (targetDate.getTime() === today.getTime()) {
-        return 'Today'
-    }
-
-    if (targetDate.getTime() === yesturday.getTime()) {
-        return 'Yesterday'
-    }
-
-    return Intl.DateTimeFormat('en-IN', {
-        month: 'short',
-        day: 'numeric'
-    }).format(date);
-}
+  return Intl.DateTimeFormat('en-IN', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(new Date(rawDate));
+};
