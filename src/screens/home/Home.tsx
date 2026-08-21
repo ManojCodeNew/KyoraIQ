@@ -18,8 +18,9 @@ const Home = () => {
       <ScrollView
         contentContainerStyle={styles.contentContainer}
         nestedScrollEnabled
+        showsVerticalScrollIndicator={false}
       >
-        <Workshop />
+        {authState.userType === 'pro' && <Workshop />}
         <BookingHistory />
         <BrowserServices />
       </ScrollView>

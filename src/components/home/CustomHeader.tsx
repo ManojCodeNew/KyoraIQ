@@ -53,9 +53,13 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
                 end={{ x: 0, y: 0 }}
                 style={[StyleSheet.absoluteFill, styles.proButton]}
               >
-                <AppImage imagePath={ICONS.ic_proBadge} variant="smallIcon" />
+                {authState.userType === 'free' && (
+                  <AppImage imagePath={ICONS.ic_proBadge} variant="smallIcon" />
+                )}
                 <AppText
-                  textContent="PRO"
+                  textContent={
+                    authState.userType === 'pro' ? 'PRO USER' : 'PRO'
+                  }
                   variant="title"
                   textStyle={styles.proText}
                 />

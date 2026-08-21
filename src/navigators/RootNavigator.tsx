@@ -11,7 +11,7 @@ import BottomTab from './BottomTab';
 const Stack = createNativeStackNavigator<RootNativeStackParamList>();
 const RootNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="tabBar">
+    <Stack.Navigator initialRouteName="Initializer">
       <Stack.Screen
         name="Initializer"
         component={AppInitializer}

@@ -63,6 +63,7 @@ export const useAuth = (): UseAuthReturn => {
     setAuthState(prev => ({
       ...prev,
       isAuthenticated: true,
+      userType: trimmedEmail === 'manoj@gmail.com' ? 'pro' : 'free',
       user: defaultUserData,
     }));
 
@@ -98,6 +99,7 @@ export const useAuth = (): UseAuthReturn => {
     setAuthState(prev => ({
       ...prev,
       isAuthenticated: true,
+      userType: 'free',
       user: defaultUserData,
     }));
 

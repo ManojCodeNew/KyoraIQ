@@ -15,6 +15,7 @@ export const AuthContextProvider = ({
 }) => {
   const [authState, setAuthState] = useState<AuthState>({
     isAuthenticated: false,
+    userType: 'free',
     user: {
       userId: '00',
       email: '',

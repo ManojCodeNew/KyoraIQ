@@ -13,7 +13,10 @@ export interface User {
   profile: UserProfile;
 }
 
+export type UserType = 'free' | 'pro';
+
 export interface AuthState {
   isAuthenticated: boolean;
+  userType: UserType;
   user: User;
 }
