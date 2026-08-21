@@ -40,14 +40,6 @@ const BottomTab = () => {
         }}
       />
       <Tab.Screen
-        name="History"
-        component={HistoryScreen}
-        options={{
-          tabBarIcon: ({ focused }) =>
-            IconProvider({ focused, icon_label: 'history' }),
-        }}
-      />
-      <Tab.Screen
         name="Chat"
         component={ChatScreen}
         options={{
@@ -55,6 +47,15 @@ const BottomTab = () => {
             IconProvider({ focused, icon_label: 'chat' }),
         }}
       />
+      <Tab.Screen
+        name="History"
+        component={HistoryScreen}
+        options={{
+          tabBarIcon: ({ focused }) =>
+            IconProvider({ focused, icon_label: 'history' }),
+        }}
+      />
+
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}

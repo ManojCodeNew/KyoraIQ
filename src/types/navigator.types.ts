@@ -20,7 +20,7 @@ export type RootBottomTabParamList = {
 export type HomeStackParamList = {
   Home: undefined;
   Workshop: undefined;
-  Service: { serviceID: string };
+  ConsultantList: { serviceID: string };
   ConsultantProfile: undefined;
   Search: undefined;
 };

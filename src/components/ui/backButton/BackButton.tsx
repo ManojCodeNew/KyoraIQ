@@ -10,16 +10,21 @@ import { ICONS } from '../../../config/icon';
 interface BackButtonProps {
   onBack: () => void;
   buttonColor?: string;
+  position?: 'absolute' | 'static';
 }
 
 const BackButton = ({
   onBack,
   buttonColor = COLORS.app_FFFFFF,
+  position = 'absolute',
 }: BackButtonProps) => {
+  const isAbsolute = position === 'absolute';
   return (
     <AppButton
       onClick={() => onBack()}
-      buttonStyle={styles.backButtonStyle}
+      buttonStyle={
+        isAbsolute ? styles.absoluteBackButton : styles.staticBackButton
+      }
       variant="small"
     >
       <AppImage
@@ -35,10 +40,16 @@ const BackButton = ({
 export default BackButton;
 
 const styles = StyleSheet.create({
-  backButtonStyle: {
+  absoluteBackButton: {
     position: 'absolute',
     top: isIOS() ? heightPixel(60) : heightPixel(30),
     left: widthPixel(10),
     borderRadius: widthPixel(50),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  staticBackButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

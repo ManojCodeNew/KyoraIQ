@@ -19,6 +19,12 @@ const HomeScreen = ({
     navigation.navigate('Workshop');
   };
 
+  const onServicePress = (id: string) => {
+    navigation.navigate('ConsultantList', {
+      serviceID: id,
+    });
+  };
+
   return (
     <View style={styles.homeContainer}>
       <CustomHeader authState={authState} />
@@ -31,6 +37,7 @@ const HomeScreen = ({
             <BookingHistory />
           </View>
         }
+        onServicePress={onServicePress}
       />
     </View>
   );

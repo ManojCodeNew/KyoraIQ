@@ -8,9 +8,17 @@ import { ICONS } from '../../config/icon';
 import { widthPixel } from '../../config/responsive';
 import { COLORS } from '../../config/colors';
 
-const RenderBrowserServices = ({ service }: { service: Services }) => {
+interface RenderBrowserServicesParams {
+  service: Services;
+  onServicePress: () => void;
+}
+
+const RenderBrowserServices = ({
+  service,
+  onServicePress,
+}: RenderBrowserServicesParams) => {
   return (
-    <GlobalCard fullWidth={true} key={service.id}>
+    <GlobalCard fullWidth={true} key={service.id} onCardPress={onServicePress}>
       <View style={styles.cardContainer}>
         <View style={styles.profileContainer}>
           <AppImage

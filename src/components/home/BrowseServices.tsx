@@ -8,16 +8,23 @@ import RenderBrowserServices from './RenderBrowserServices';
 interface BrowseServicesParams {
   onViewAllPress?: () => void;
   listHeaderComponents: React.ReactElement;
+  onServicePress: (id: string) => void;
 }
 
 const BrowseServices = ({
   listHeaderComponents,
   onViewAllPress,
+  onServicePress,
 }: BrowseServicesParams) => {
   return (
     <FlatList
       data={services}
-      renderItem={({ item }) => <RenderBrowserServices service={item} />}
+      renderItem={({ item }) => (
+        <RenderBrowserServices
+          service={item}
+          onServicePress={() => onServicePress(item.id)}
+        />
+      )}
       keyExtractor={item => item.id}
       ListHeaderComponent={
         <>

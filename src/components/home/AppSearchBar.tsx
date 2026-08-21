@@ -5,13 +5,31 @@ import { COLORS } from '../../config/colors';
 import AppImage from '../ui/image/AppImage';
 import AppTextInput from '../ui/textInput/AppTextInput';
 import { ICONS } from '../../config/icon';
+import BackButton from '../ui/backButton/BackButton';
 
-const AppSearchBar = () => {
+interface AppSearchBarParams {
+  iconType?: 'search' | 'back';
+  placeholderText: string;
+}
+
+const AppSearchBar = ({
+  iconType = 'search',
+  placeholderText,
+}: AppSearchBarParams) => {
+  const isSearchIcon = iconType === 'search';
   return (
     <View style={styles.searchContainer}>
-      <AppImage imagePath={ICONS.ic_search} />
+      {isSearchIcon ? (
+        <AppImage imagePath={ICONS.ic_search} />
+      ) : (
+        <BackButton
+          onBack={() => ''}
+          buttonColor={COLORS.app_000000}
+          position="static"
+        />
+      )}
       <AppTextInput
-        placeholderText="Search “Cloud Security”"
+        placeholderText={placeholderText}
         textInputStyle={styles.searchBar}
       />
     </View>

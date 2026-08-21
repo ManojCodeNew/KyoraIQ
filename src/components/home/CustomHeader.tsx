@@ -70,7 +70,7 @@ const CustomHeader = ({ authState }: CustomHeaderParams) => {
         </View>
         <View style={styles.searchRow}>
           <View>
-            <AppSearchBar />
+            <AppSearchBar placeholderText="Search “Cloud Security”" />
           </View>
           <View style={styles.helpContainer}>
             <AppImage imagePath={ICONS.ic_help} variant="mediumIcon" />
