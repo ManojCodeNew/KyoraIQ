@@ -4,7 +4,7 @@ import AppSearchBar from '../../../components/home/AppSearchBar';
 
 const ConsultantListScreen = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <AppSearchBar placeholderText="Search" iconType="back" />
     </View>
   );
@@ -13,5 +13,5 @@ const ConsultantListScreen = () => {
 export default ConsultantListScreen;
 
 const styles = StyleSheet.create({
-    
+  container: {},
 });
